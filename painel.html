@@ -1,0 +1,1064 @@
+<meta name="dash-one-writer">
+<style>
+/* Layout: cabeçalho de controle + abas; cartões de KPI em grade fluida; gráficos em duas colunas que viram uma no celular */
+#dash-root { --dash-gutter: 0; }
+.cdt {
+  --bg: #EEF2F7; --panel: #FFFFFF; --panel2: #F5F7FB; --fg: #0E1A2B; --muted: #56677F; --line: #D7DFEA;
+  --accent: #1D5BD6; --accent-soft: #E2EBFC; --ok: #1B8A55; --warn: #B87400; --bad: #C5362B; --grid: #E4E9F0;
+  --head: #0B2E59; --head-fg: #FFFFFF; --head-muted: #B9C9E4;
+  --s-carregado: #2563EB; --s-viagem: #E0A100; --s-desc: #8B5CF6; --s-retorno: #EA7A2E; --s-fluxo: #64748B;
+  --s-manobra: #A3B1C6; --s-vazio: #16A34A; --s-manut: #DC2626; --s-mec: #9A4A12; --s-sinistro: #7F1D1D;
+  --s-inativo: #CBD5E1; --s-sem: #E2E8F0; --s-interno: #94A3B8; --s-ferias: #0EA5E9; --s-folga: #A78BFA; --s-falta: #DC2626;
+  --c-op: #2563EB; --c-disp: #16A34A; --c-par: #DC2626; --c-fora: #CBD5E1;
+  background: var(--bg); color: var(--fg); font-family: var(--font-anthropic-sans), system-ui, sans-serif;
+  font-size: 14px; line-height: 1.45; padding-block: 0 32px; min-height: 100%;
+}
+.cdt.cdt-dark {
+  --bg: #0A1120; --panel: #111B2E; --panel2: #16223A; --fg: #E5ECF6; --muted: #93A4BE; --line: #24324B;
+  --accent: #6AA2FF; --accent-soft: #1A2C4E; --ok: #3CC987; --warn: #F2B53A; --bad: #FF6B5E; --grid: #1E2A42;
+  --head: #07152B; --head-fg: #E8EFFA; --head-muted: #8EA3C4;
+  --s-carregado: #4F86FF; --s-viagem: #F2C230; --s-desc: #A78BFA; --s-retorno: #F59E57; --s-fluxo: #8393AB;
+  --s-manobra: #5D6E88; --s-vazio: #34C46F; --s-manut: #F05A4F; --s-mec: #C9783E; --s-sinistro: #E04848;
+  --s-inativo: #344158; --s-sem: #26324A; --s-interno: #6B7C96; --s-ferias: #38BDF8; --s-folga: #B9A2FB; --s-falta: #F05A4F;
+  --c-op: #4F86FF; --c-disp: #34C46F; --c-par: #F05A4F; --c-fora: #344158;
+  color-scheme: dark;
+}
+.cdt * { box-sizing: border-box; }
+.cdt-wrap { padding-inline: 20px; max-width: 1400px; margin: 0 auto; }
+.cdt-head { background: var(--head); color: var(--head-fg); }
+.cdt-head .cdt-wrap { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 20px; padding-block: 18px 16px; }
+.cdt-brand { flex: 1 1 320px; min-width: 0; }
+.cdt-eyebrow { font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: var(--head-muted); margin: 0; }
+.cdt-title { margin: 2px 0 4px; font-size: 26px; letter-spacing: .04em; font-weight: 700; line-height: 1.15; text-wrap: balance; }
+.cdt-take { margin: 0; color: var(--head-muted); max-width: 72ch; }
+.cdt-take b { color: var(--head-fg); font-weight: 600; font-variant-numeric: tabular-nums; }
+.cdt-theme { display: inline-flex; align-items: center; gap: 8px; border: 1px solid rgba(255,255,255,.25); background: rgba(255,255,255,.08); color: var(--head-fg); border-radius: 999px; padding: 7px 14px; font: inherit; font-size: 13px; cursor: pointer; }
+.cdt-theme:hover { background: rgba(255,255,255,.16); }
+.cdt-theme:focus-visible, .cdt-tab:focus-visible, .cdt-btn:focus-visible, .cdt-sel:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.cdt-theme .t-dark, .cdt.cdt-dark .cdt-theme .t-light { display: inline; }
+.cdt-theme .t-light, .cdt.cdt-dark .cdt-theme .t-dark { display: none; }
+
+.cdt-bar { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5; background: var(--panel); border-bottom: 1px solid var(--line); }
+.cdt-bar .cdt-wrap { display: flex; flex-wrap: wrap; gap: 10px 16px; align-items: end; padding-block: 10px; }
+.cdt-field { display: flex; flex-direction: column; gap: 3px; min-width: 0; }
+.cdt-field label { font-size: 11px; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+.cdt-sel { font: inherit; color: var(--fg); background-color: var(--panel2); border: 1px solid var(--line); border-radius: 8px; padding: 7px 10px; min-width: 150px; max-width: 100%; }
+.cdt-btn { font: inherit; font-size: 13px; color: var(--accent); background: var(--accent-soft); border: 0; border-radius: 8px; padding: 8px 12px; cursor: pointer; }
+.cdt-tabs { display: flex; gap: 4px; flex-wrap: wrap; margin-left: auto; }
+.cdt-tab { font: inherit; font-size: 13px; border: 1px solid transparent; background: transparent; color: var(--muted); padding: 7px 12px; border-radius: 8px; cursor: pointer; }
+.cdt-tab:hover { color: var(--fg); background: var(--panel2); }
+.cdt-tab.is-on { color: var(--accent); background: var(--accent-soft); font-weight: 600; }
+
+.cdt-main { display: grid; gap: 18px; padding-block: 18px 0; }
+.cdt-sec { display: grid; gap: 18px; }
+.cdt-sec[hidden] { display: none; }
+.cdt-h2 { font-size: 13px; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); margin: 4px 0 -6px; font-weight: 600; }
+.cdt-kpis { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 12px; }
+.cdt-kpi { background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 12px 14px; display: grid; gap: 2px; border-top: 3px solid var(--k, var(--accent)); min-width: 0; }
+.cdt-kpi .k-l { font-size: 11.5px; color: var(--muted); letter-spacing: .04em; text-transform: uppercase; }
+.cdt-kpi .k-v { font-family: var(--font-anthropic-serif), Georgia, serif; font-weight: 400; font-size: 32px; line-height: 1.1; font-variant-numeric: tabular-nums; }
+.cdt-kpi .k-s { font-size: 12px; color: var(--muted); font-variant-numeric: tabular-nums; }
+.cdt-good { color: var(--ok); font-weight: 600; }
+.cdt-bad { color: var(--bad); font-weight: 600; }
+.cdt-flat { color: var(--muted); font-weight: 600; }
+
+.cdt-grid2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 440px), 1fr)); gap: 18px; }
+.cdt-card { background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 16px; min-width: 0; display: grid; gap: 10px; align-content: start; }
+.cdt-card h3 { margin: 0; font-size: 15px; font-weight: 600; }
+.cdt-card .c-sub { margin: -6px 0 0; font-size: 12.5px; color: var(--muted); }
+.cdt-chart { position: relative; min-height: 220px; }
+.cdt-chart svg { display: block; overflow: visible; }
+.cdt-chart text { fill: var(--muted); font-size: 11.5px; font-family: var(--font-anthropic-sans), system-ui, sans-serif; }
+.cdt-chart .lbl-strong { fill: var(--fg); font-weight: 600; }
+.cdt-chart .grid line { stroke: var(--grid); }
+.cdt-chart .grid path, .cdt-chart .ax path { display: none; }
+.cdt-chart .ax line { stroke: var(--grid); }
+.cdt-clickable { cursor: pointer; }
+.cdt-tip { position: absolute; pointer-events: none; z-index: 3; background: var(--panel); color: var(--fg); border: 1px solid var(--line); box-shadow: 0 6px 20px rgba(0,0,0,.18); border-radius: 8px; padding: 8px 10px; font-size: 12px; line-height: 1.4; max-width: 240px; font-variant-numeric: tabular-nums; }
+.cdt-tip[hidden] { display: none; }
+.cdt-legend { display: flex; flex-wrap: wrap; gap: 6px 14px; font-size: 12px; color: var(--muted); margin: 0; padding: 0; list-style: none; }
+.cdt-legend li { display: inline-flex; align-items: center; gap: 6px; }
+.cdt-sw { width: 10px; height: 10px; border-radius: 3px; display: inline-block; background: var(--sw); }
+
+.cdt-tablewrap { overflow-x: auto; border: 1px solid var(--line); border-radius: 10px; }
+.cdt-tablewrap.tall { max-height: 460px; overflow-y: auto; }
+.cdt-table { border-collapse: collapse; width: 100%; font-size: 13px; font-variant-numeric: tabular-nums; }
+.cdt-table th { position: sticky; top: 0; background: var(--panel2); color: var(--muted); font-weight: 600; text-align: left; font-size: 11.5px; letter-spacing: .04em; text-transform: uppercase; padding: 8px 10px; border-bottom: 1px solid var(--line); white-space: nowrap; z-index: 1; }
+.cdt-table td { padding: 7px 10px; border-bottom: 1px solid var(--line); white-space: nowrap; }
+.cdt-table tr:last-child td { border-bottom: 0; }
+.cdt-table .num { text-align: right; }
+.cdt-table tr.is-sel td { background: var(--accent-soft); }
+.cdt-pill { display: inline-flex; align-items: center; gap: 6px; padding: 2px 9px 2px 7px; border-radius: 999px; background: var(--panel2); border: 1px solid var(--line); font-size: 12px; }
+.cdt-pill i { width: 8px; height: 8px; border-radius: 50%; background: var(--sw); display: inline-block; }
+.cdt-lvl { font-size: 11px; font-weight: 700; letter-spacing: .05em; text-transform: uppercase; padding: 2px 8px; border-radius: 6px; }
+.cdt-lvl.crit { color: #fff; background: var(--bad); }
+.cdt-lvl.att { color: #1d1300; background: var(--warn); }
+.cdt-strip { display: inline-flex; gap: 2px; vertical-align: middle; }
+.cdt-strip span { width: 12px; height: 14px; border-radius: 2px; background: var(--sw); display: inline-block; }
+.cdt-meter { height: 6px; background: var(--panel2); border-radius: 3px; min-width: 70px; overflow: hidden; }
+.cdt-meter span { display: block; height: 100%; background: var(--ok); }
+.cdt-note { font-size: 12px; color: var(--muted); margin: 0; }
+.cdt-empty { color: var(--muted); font-size: 13px; padding: 14px 4px; }
+.cdt-foot details { background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 12px 16px; }
+.cdt-foot summary { cursor: pointer; font-weight: 600; }
+.cdt-foot dl { display: grid; grid-template-columns: max-content 1fr; gap: 6px 16px; margin: 12px 0 0; font-size: 13px; }
+.cdt-foot dt { font-weight: 600; }
+.cdt-foot dd { margin: 0; color: var(--muted); }
+[data-dash-source-state=refreshing] { opacity: .5; }
+@media (max-width: 560px) {
+  .cdt-title { font-size: 21px; }
+  .cdt-wrap { padding-inline: max(14px, env(safe-area-inset-left, 0px)); }
+  .cdt-tabs { margin-left: 0; }
+  .cdt-kpi .k-v { font-size: 26px; }
+  .cdt-foot dl { grid-template-columns: 1fr; }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .cdt-chart .bar, .cdt-chart .seg { transition: opacity .2s; }
+}
+</style>
+
+<div class="cdt" id="cdt">
+  <header class="cdt-head">
+    <div class="cdt-wrap">
+      <div class="cdt-brand">
+        <p class="cdt-eyebrow">Colormaq · Logística de transporte · Filial BA e Matriz SP</p>
+        <h1 class="cdt-title" id="titulo">COCKPIT DIÁRIO TRANSPORTE</h1>
+        <p class="cdt-take" id="resumo">Em <b data-draw="t_dia">—</b>, <b data-draw="t_op" data-source="kpi_veic" data-field="operacao" data-row="0">—</b> de <b data-draw="t_ativa" data-source="kpi_veic" data-field="ativa" data-row="0">—</b> veículos ativos estavam em operação (utilização de <b data-draw="t_util" data-source="kpi_veic" data-field="util_pct" data-row="0">—</b>), com <b data-draw="t_par" data-source="kpi_veic" data-field="parados" data-row="0">—</b> parados e <b data-draw="t_rota" data-source="kpi_mot" data-field="em_rota" data-row="0">—</b> motoristas em rota.</p>
+      </div>
+      <button type="button" class="cdt-theme" id="tema" aria-label="Alternar entre modo claro e escuro"><span class="t-dark">☾ Modo escuro</span><span class="t-light">☀ Modo claro</span></button>
+    </div>
+  </header>
+
+  <div class="cdt-bar" id="filtros">
+    <div class="cdt-wrap">
+      <div class="cdt-field"><label for="f-dia">Data</label><select id="f-dia" class="cdt-sel" data-draw="sel_dia" data-source="veiculos"></select></div>
+      <div class="cdt-field"><label for="f-uni">Unidade</label>
+        <select id="f-uni" class="cdt-sel"><option value="">Todas as unidades</option><option value="Filial BA">Filial BA</option><option value="Matriz SP">Matriz SP</option></select></div>
+      <div class="cdt-field"><label for="f-cat">Categoria</label><select id="f-cat" class="cdt-sel" data-draw="sel_cat" data-source="veiculos"></select></div>
+      <button type="button" class="cdt-btn" id="limpar">Limpar filtros</button>
+      <nav class="cdt-tabs" aria-label="Seções do painel">
+        <button type="button" class="cdt-tab is-on" data-tab="visao">Visão geral</button>
+        <button type="button" class="cdt-tab" data-tab="frota">Frota</button>
+        <button type="button" class="cdt-tab" data-tab="motoristas">Motoristas</button>
+        <button type="button" class="cdt-tab" data-tab="tendencia">Tendência</button>
+        <button type="button" class="cdt-tab" data-tab="manutencao">Manutenções</button>
+      </nav>
+    </div>
+  </div>
+
+  <main class="cdt-main cdt-wrap">
+    <!-- VISÃO GERAL -->
+    <section class="cdt-sec" id="visao">
+      <h2 class="cdt-h2">Veículos no dia</h2>
+      <div class="cdt-kpis" id="kpis-veic">
+        <div class="cdt-kpi" style="--k: var(--fg)"><span class="k-l">Frota ativa</span><span class="k-v" data-draw="k_ativa" data-source="kpi_veic" data-field="ativa" data-row="0">—</span><span class="k-s"><span data-draw="k_inat" data-source="kpi_veic" data-field="inativos" data-row="0">—</span> inativos fora da conta</span></div>
+        <div class="cdt-kpi" style="--k: var(--c-op)"><span class="k-l">Em operação</span><span class="k-v" data-draw="k_op" data-source="kpi_veic" data-field="operacao" data-row="0">—</span><span class="k-s">Utilização <b data-draw="k_util" data-source="kpi_veic" data-field="util_pct" data-row="0">—</b> · <span data-draw="k_dutil" data-source="kpi_veic" data-field="delta_util_pp" data-row="0">—</span> vs dia anterior</span></div>
+        <div class="cdt-kpi" style="--k: var(--s-carregado)"><span class="k-l">Carregados</span><span class="k-v" data-draw="k_carr" data-source="kpi_veic" data-field="carregado" data-row="0">—</span><span class="k-s">prontos para sair</span></div>
+        <div class="cdt-kpi" style="--k: var(--s-viagem)"><span class="k-l">Em viagem</span><span class="k-v" data-draw="k_viag" data-source="kpi_veic" data-field="em_viagem" data-row="0">—</span><span class="k-s">+ <span data-draw="k_ret" data-source="kpi_veic" data-field="retorno" data-row="0">—</span> em retorno</span></div>
+        <div class="cdt-kpi" style="--k: var(--s-desc)"><span class="k-l">Ag. descarga</span><span class="k-v" data-draw="k_desc" data-source="kpi_veic" data-field="ag_descarga" data-row="0">—</span><span class="k-s">aguardando no cliente</span></div>
+        <div class="cdt-kpi" style="--k: var(--s-vazio)"><span class="k-l">Vazios</span><span class="k-v" data-draw="k_vaz" data-source="kpi_veic" data-field="vazio" data-row="0">—</span><span class="k-s">disponíveis para carregar</span></div>
+        <div class="cdt-kpi" style="--k: var(--bad)"><span class="k-l">Parados</span><span class="k-v" data-draw="k_par" data-source="kpi_veic" data-field="parados" data-row="0">—</span><span class="k-s">Disponibilidade <b data-draw="k_disp" data-source="kpi_veic" data-field="disp_pct" data-row="0">—</b></span></div>
+      </div>
+
+      <h2 class="cdt-h2">Motoristas no dia</h2>
+      <div class="cdt-kpis" id="kpis-mot">
+        <div class="cdt-kpi" style="--k: var(--fg)"><span class="k-l">Motoristas</span><span class="k-v" data-draw="m_tot" data-source="kpi_mot" data-field="total" data-row="0">—</span><span class="k-s">cadastrados na rotina</span></div>
+        <div class="cdt-kpi" style="--k: var(--c-op)"><span class="k-l">Em rota</span><span class="k-v" data-draw="m_rota" data-source="kpi_mot" data-field="em_rota" data-row="0">—</span><span class="k-s"><span data-draw="m_drota" data-source="kpi_mot" data-field="delta_em_rota" data-row="0">—</span> vs dia anterior</span></div>
+        <div class="cdt-kpi" style="--k: var(--s-vazio)"><span class="k-l">Disponíveis</span><span class="k-v" data-draw="m_disp" data-source="kpi_mot" data-field="disponivel" data-row="0">—</span><span class="k-s">aguardando escala</span></div>
+        <div class="cdt-kpi" style="--k: var(--s-interno)"><span class="k-l">Internos</span><span class="k-v" data-draw="m_int" data-source="kpi_mot" data-field="interno" data-row="0">—</span><span class="k-s">atividades na unidade</span></div>
+        <div class="cdt-kpi" style="--k: var(--bad)"><span class="k-l">Ausentes</span><span class="k-v" data-draw="m_aus" data-source="kpi_mot" data-field="ausentes" data-row="0">—</span><span class="k-s">férias, folga ou falta</span></div>
+        <div class="cdt-kpi" style="--k: var(--ok)"><span class="k-l">Presença</span><span class="k-v" data-draw="m_pres" data-source="kpi_mot" data-field="presenca_pct" data-row="0">—</span><span class="k-s">do quadro no dia</span></div>
+      </div>
+
+      <div class="cdt-grid2">
+        <div class="cdt-card" id="card-status">
+          <h3>Status da frota no dia</h3>
+          <p class="c-sub">Clique em um status para ver os veículos na aba Frota.</p>
+          <div class="cdt-chart" data-draw="ch_status" data-source="status_veic"></div>
+        </div>
+        <div class="cdt-card" id="card-unidades">
+          <h3>Filial BA × Matriz SP</h3>
+          <p class="c-sub">Distribuição da frota de cada unidade por situação.</p>
+          <ul class="cdt-legend">
+            <li><span class="cdt-sw" style="--sw: var(--c-op)"></span>Em operação</li>
+            <li><span class="cdt-sw" style="--sw: var(--c-disp)"></span>Disponível (vazio)</li>
+            <li><span class="cdt-sw" style="--sw: var(--c-par)"></span>Parado</li>
+            <li><span class="cdt-sw" style="--sw: var(--c-fora)"></span>Inativo / sem apontamento</li>
+          </ul>
+          <div class="cdt-chart" data-draw="ch_unid" data-source="status_veic" style="min-height: 150px"></div>
+        </div>
+      </div>
+
+      <div class="cdt-card" id="card-alertas">
+        <h3>Alertas do dia</h3>
+        <p class="c-sub">Veículos parados há 3 dias ou mais, ociosos há 3 dias ou mais, aguardando descarga há 2 dias ou mais, sem apontamento e faltas de motoristas.</p>
+        <div class="cdt-tablewrap tall">
+          <table class="cdt-table" data-source="alertas" data-row-key="chave">
+            <thead><tr><th>Nível</th><th data-field="tipo">Alerta</th><th data-field="item">Veículo / motorista</th><th data-field="unidade">Unidade</th><th data-field="detalhe">Detalhe</th><th class="num" data-field="dias">Dias seguidos</th></tr></thead>
+            <tbody data-draw="tb_alertas"></tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- FROTA -->
+    <section class="cdt-sec" id="frota" hidden>
+      <div class="cdt-card" id="card-categoria">
+        <h3>Categorias no dia</h3>
+        <p class="c-sub">Utilização = veículos em operação ÷ total da categoria (sem inativos).</p>
+        <div class="cdt-tablewrap">
+          <table class="cdt-table" data-source="categoria" data-row-key="categoria">
+            <thead><tr><th data-field="categoria">Categoria</th><th class="num" data-field="total">Total</th><th class="num" data-field="em_operacao">Em operação</th><th class="num" data-field="disponivel">Vazios</th><th class="num" data-field="parados">Parados</th><th class="num" data-field="fora">Inativos / s. apont.</th><th class="num" data-field="util_pct">Utilização %</th><th></th></tr></thead>
+            <tbody data-draw="tb_cat"></tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="cdt-card" id="card-lista">
+        <h3>Veículos no dia</h3>
+        <div class="cdt-field" style="max-width: 280px"><label for="f-status">Status</label><select id="f-status" class="cdt-sel" data-draw="sel_status" data-source="status_veic"></select></div>
+        <div class="cdt-tablewrap tall">
+          <table class="cdt-table" data-source="lista_veic" data-row-key="placa">
+            <thead><tr><th data-field="placa">Placa</th><th data-field="unidade">Unidade</th><th data-field="categoria">Categoria</th><th data-field="modelo">Modelo</th><th data-field="grupo">Status</th><th class="num" data-field="dias_status">Dias no status</th></tr></thead>
+            <tbody data-draw="tb_lista"></tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="cdt-card" id="card-timeline">
+        <h3>Linha do tempo da frota</h3>
+        <p class="c-sub">Status de cada veículo em cada dia apontado no mês. Passe o mouse para ver o detalhe.</p>
+        <ul class="cdt-legend" id="leg-timeline">
+          <li><span class="cdt-sw" style="--sw: var(--s-carregado)"></span>Carregado</li>
+          <li><span class="cdt-sw" style="--sw: var(--s-viagem)"></span>Em viagem</li>
+          <li><span class="cdt-sw" style="--sw: var(--s-desc)"></span>Ag. descarga</li>
+          <li><span class="cdt-sw" style="--sw: var(--s-retorno)"></span>Retorno</li>
+          <li><span class="cdt-sw" style="--sw: var(--s-fluxo)"></span>Fluxo CD</li>
+          <li><span class="cdt-sw" style="--sw: var(--s-manobra)"></span>Manobra</li>
+          <li><span class="cdt-sw" style="--sw: var(--s-vazio)"></span>Vazio</li>
+          <li><span class="cdt-sw" style="--sw: var(--s-manut)"></span>Manutenção</li>
+          <li><span class="cdt-sw" style="--sw: var(--s-mec)"></span>MEC</li>
+          <li><span class="cdt-sw" style="--sw: var(--s-sinistro)"></span>Sinistro</li>
+          <li><span class="cdt-sw" style="--sw: var(--s-inativo)"></span>Inativo</li>
+          <li><span class="cdt-sw" style="--sw: var(--s-sem)"></span>Sem apontamento</li>
+        </ul>
+        <div class="cdt-tablewrap tall" style="border: 0">
+          <div class="cdt-chart" data-draw="ch_timeline" data-source="veiculos" style="min-height: 300px"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- MOTORISTAS -->
+    <section class="cdt-sec" id="motoristas" hidden>
+      <div class="cdt-grid2">
+        <div class="cdt-card" id="card-mot-status">
+          <h3>Motoristas por status</h3>
+          <p class="c-sub">Divisão entre CD Filial BA, Fábrica Filial BA e Matriz SP.</p>
+          <ul class="cdt-legend">
+            <li><span class="cdt-sw" style="--sw: var(--s-carregado)"></span>CD Filial BA</li>
+            <li><span class="cdt-sw" style="--sw: var(--s-ferias)"></span>Fábrica Filial BA</li>
+            <li><span class="cdt-sw" style="--sw: var(--s-retorno)"></span>Matriz SP</li>
+          </ul>
+          <div class="cdt-chart" data-draw="ch_mot" data-source="status_mot"></div>
+        </div>
+        <div class="cdt-card" id="card-mot-tabela">
+          <h3>Status por base</h3>
+          <div class="cdt-tablewrap">
+            <table class="cdt-table" data-source="status_mot" data-row-key="grupo">
+              <thead><tr><th data-field="grupo">Status</th><th class="num" data-field="cd_filial">CD Filial BA</th><th class="num" data-field="fabrica">Fábrica Filial BA</th><th class="num" data-field="matriz">Matriz SP</th><th class="num" data-field="total">Total</th></tr></thead>
+              <tbody data-draw="tb_mot_status"></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+      <div class="cdt-card" id="card-mot-lista">
+        <h3>Rotina dos motoristas</h3>
+        <p class="c-sub">Status do dia e histórico dos dias apontados no mês (do mais antigo ao mais recente).</p>
+        <div class="cdt-tablewrap tall">
+          <table class="cdt-table" data-source="motoristas_dia" data-row-key="motorista">
+            <thead><tr><th data-field="motorista">Motorista</th><th data-field="base">Base</th><th data-field="grupo">Status do dia</th><th class="num" data-field="dias_rota">Dias em rota</th><th class="num" data-field="dias_periodo">Dias apontados</th><th>Histórico</th></tr></thead>
+            <tbody data-draw="tb_mot"></tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- TENDÊNCIA -->
+    <section class="cdt-sec" id="tendencia" hidden>
+      <div class="cdt-card" id="card-trend">
+        <h3>Utilização da frota por dia útil</h3>
+        <p class="c-sub">Outubro e novembro de 2026. Segue o filtro de unidade; o filtro de categoria não se aplica a este histórico.</p>
+        <ul class="cdt-legend">
+          <li><span class="cdt-sw" style="--sw: var(--fg)"></span>Total</li>
+          <li><span class="cdt-sw" style="--sw: var(--s-carregado)"></span>Filial BA</li>
+          <li><span class="cdt-sw" style="--sw: var(--s-retorno)"></span>Matriz SP</li>
+        </ul>
+        <div class="cdt-chart" data-draw="ch_trend" data-source="tendencia kpi_veic" style="min-height: 280px"></div>
+      </div>
+      <div class="cdt-card" id="card-trend-par">
+        <h3>Veículos parados por dia</h3>
+        <p class="c-sub">Manutenção, MEC e sinistro somados.</p>
+        <div class="cdt-chart" data-draw="ch_par" data-source="tendencia" style="min-height: 220px"></div>
+      </div>
+    </section>
+
+    <!-- MANUTENÇÕES -->
+    <section class="cdt-sec" id="manutencao" hidden>
+      <div class="cdt-kpis">
+        <div class="cdt-kpi" style="--k: var(--bad)"><span class="k-l">Veículos parados hoje</span><span class="k-v" data-draw="mp_par" data-source="kpi_veic" data-field="parados" data-row="0">—</span><span class="k-s"><span data-draw="mp_man" data-source="kpi_veic" data-field="manutencao" data-row="0">—</span> manutenção · <span data-draw="mp_mec" data-source="kpi_veic" data-field="mec" data-row="0">—</span> MEC · <span data-draw="mp_sin" data-source="kpi_veic" data-field="sinistro" data-row="0">—</span> sinistro</span></div>
+        <div class="cdt-kpi" style="--k: var(--warn)"><span class="k-l">Ordens em aberto</span><span class="k-v" data-draw="mp_abertas" data-source="manut_resumo" data-field="abertas" data-row="0">—</span><span class="k-s">no Controle de Manutenções</span></div>
+        <div class="cdt-kpi" style="--k: var(--fg)"><span class="k-l">Lead time médio</span><span class="k-v" data-draw="mp_lead" data-source="manut_resumo" data-field="lead_medio" data-row="0">—</span><span class="k-s">dias, ordens concluídas</span></div>
+      </div>
+      <div class="cdt-card" id="card-parados">
+        <h3>Veículos parados no dia</h3>
+        <div class="cdt-tablewrap">
+          <table class="cdt-table" data-source="parados" data-row-key="placa">
+            <thead><tr><th data-field="placa">Placa</th><th data-field="unidade">Unidade</th><th data-field="categoria">Categoria</th><th data-field="modelo">Modelo</th><th data-field="grupo">Motivo</th><th class="num" data-field="dias">Dias parado</th></tr></thead>
+            <tbody data-draw="tb_parados"></tbody>
+          </table>
+        </div>
+      </div>
+      <div class="cdt-card" id="card-manut">
+        <h3>Controle de manutenções</h3>
+        <p class="c-sub">Registros da aba Controle Manutenções. Dias em aberto contados até a data selecionada.</p>
+        <div class="cdt-tablewrap">
+          <table class="cdt-table" data-source="manut" data-row-key="placa,entrada">
+            <thead><tr><th data-field="placa">Placa</th><th data-field="unidade">Unidade</th><th data-field="tipo">Tipo</th><th data-field="entrada">Entrada</th><th data-field="saida">Saída</th><th data-field="situacao">Situação</th><th class="num" data-field="dias">Dias</th><th data-field="motivo">Motivo</th><th data-field="observacao">Observação</th></tr></thead>
+            <tbody data-draw="tb_manut"></tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <footer class="cdt-foot">
+      <details>
+        <summary>Como os números são calculados</summary>
+        <dl>
+          <dt>Frota ativa</dt><dd>Veículos do Cockpit Diário menos os marcados como inativos ou roubados.</dd>
+          <dt>Em operação</dt><dd>Carregado, em viagem, aguardando descarga no cliente, retorno, fluxo CD e manobra.</dd>
+          <dt>Parados</dt><dd>Manutenção, MEC e sinistro.</dd>
+          <dt>Utilização</dt><dd>Em operação ÷ frota ativa.</dd>
+          <dt>Disponibilidade</dt><dd>(Frota ativa − parados) ÷ frota ativa.</dd>
+          <dt>Motoristas em rota</dt><dd>Em viagem, carregado ou aguardando descarga.</dd>
+          <dt>Presença</dt><dd>Motoristas sem férias, folga ou falta ÷ total.</dd>
+          <dt>Fonte</dt><dd>Planilha Fechamento Transporte FSA 2025.2: abas Cockpit Diário Novembro 2026, Cockpit Diário Outubro, Rotina Diária Mot. Frota Novembro e Controle Manutenções, copiadas em 13/11/2026.</dd>
+        </dl>
+      </details>
+    </footer>
+  </main>
+</div>
+
+<script>
+/* Base compartilhada: cores por status, formatação e regras de agrupamento */
+window.CDT = {
+  OP: ['Carregado', 'Em Viagem', 'Ag. Descarga', 'Retorno', 'Fluxo CD', 'Manobra'],
+  PAR: ['Manutenção', 'MEC', 'Sinistro'],
+  ORDEM_V: ['Carregado', 'Em Viagem', 'Ag. Descarga', 'Retorno', 'Fluxo CD', 'Manobra', 'Vazio', 'Manutenção', 'MEC', 'Sinistro', 'Sem apontamento', 'Inativo'],
+  ORDEM_M: ['Em Viagem', 'Carregado', 'Ag. Descarga', 'Disponível', 'Interno', 'Férias', 'Folga', 'Falta'],
+  cor(g) {
+    return ({ 'Carregado': 'var(--s-carregado)', 'Em Viagem': 'var(--s-viagem)', 'Ag. Descarga': 'var(--s-desc)', 'Retorno': 'var(--s-retorno)',
+      'Fluxo CD': 'var(--s-fluxo)', 'Manobra': 'var(--s-manobra)', 'Vazio': 'var(--s-vazio)', 'Disponível': 'var(--s-vazio)', 'Manutenção': 'var(--s-manut)',
+      'MEC': 'var(--s-mec)', 'Sinistro': 'var(--s-sinistro)', 'Inativo': 'var(--s-inativo)', 'Sem apontamento': 'var(--s-sem)',
+      'Interno': 'var(--s-interno)', 'Férias': 'var(--s-ferias)', 'Folga': 'var(--s-folga)', 'Falta': 'var(--s-falta)' })[g] || 'var(--s-sem)';
+  },
+  dia(p, linhas) {
+    const ds = [...new Set(linhas.map((r) => r.data))].sort();
+    return ds.includes(p.dia) ? p.dia : ds[ds.length - 1];
+  },
+  fmtDia(iso) {
+    if (!iso) return '—';
+    const d = d3.utcParse('%Y-%m-%d')(iso);
+    return d ? d3.utcFormat('%d/%m')(d) + ' (' + ['dom', 'seg', 'ter', 'qua', 'qui', 'sex', 'sáb'][d.getUTCDay()] + ')' : iso;
+  },
+  fmtCurto(iso) { const d = d3.utcParse('%Y-%m-%d')(iso); return d ? d3.utcFormat('%d/%m')(d) : iso; },
+  ok(id) { const d = dash.data(id); return d.status === 'ok' ? d.data : null; },
+  tip(el) {
+    const t = document.createElement('div'); t.className = 'cdt-tip'; t.hidden = true; el.appendChild(t);
+    return {
+      show(ev, lines) {
+        t.replaceChildren(...lines.map((l, i) => { const s = document.createElement('div'); s.textContent = l; if (i === 0) s.style.fontWeight = '600'; return s; }));
+        t.hidden = false;
+        const box = el.getBoundingClientRect();
+        let x = ev.clientX - box.left + 12, y = ev.clientY - box.top + 12;
+        const w = t.offsetWidth, h = t.offsetHeight;
+        if (x + w > el.clientWidth) x = Math.max(0, ev.clientX - box.left - w - 12);
+        if (y + h > el.clientHeight + 40) y = Math.max(0, ev.clientY - box.top - h - 12);
+        t.style.left = x + 'px'; t.style.top = y + 'px';
+      },
+      hide() { t.hidden = true; }
+    };
+  },
+  pill(g) {
+    const s = document.createElement('span'); s.className = 'cdt-pill';
+    const i = document.createElement('i'); i.style.setProperty('--sw', CDT.cor(g));
+    s.append(i, document.createTextNode(g)); return s;
+  },
+  sinal(n, suf) { return (n > 0 ? '+' : n < 0 ? '-' : '±') + Math.abs(n) + (suf || ''); }
+};
+</script>
+
+<script>
+/* Cálculos */
+dash.calc('kpi_veic', {
+  inputs: ['veiculos'],
+  title: 'Resumo da frota no dia',
+  description: 'Contagens de veículos por status na data e filtros escolhidos, com utilização e variação contra o dia anterior apontado.',
+  fn: (veiculos) => {
+    const p = dash.params();
+    const datas = [...new Set(veiculos.map((r) => r.data))].sort();
+    if (!datas.length) return [];
+    const dia = datas.includes(p.dia) ? p.dia : datas[datas.length - 1];
+    const ant = datas[datas.indexOf(dia) - 1] || null;
+    const sel = (r) => (!p.unidade || r.unidade === p.unidade) && (!p.categoria || r.categoria === p.categoria);
+    const resumo = (d) => {
+      const rs = veiculos.filter((r) => r.data === d && sel(r));
+      const c = (g) => rs.filter((r) => r.grupo === g).length;
+      const k = (x) => rs.filter((r) => r.classe === x).length;
+      const inativos = c('Inativo'), ativa = rs.length - inativos, operacao = k('Em operação'), parados = k('Parado');
+      return { frota: rs.length, ativa, inativos, operacao, parados,
+        carregado: c('Carregado'), em_viagem: c('Em Viagem'), ag_descarga: c('Ag. Descarga'), retorno: c('Retorno'), fluxo_cd: c('Fluxo CD'),
+        manobra: c('Manobra'), vazio: c('Vazio'), manutencao: c('Manutenção'), mec: c('MEC'), sinistro: c('Sinistro'), sem_apontamento: c('Sem apontamento'),
+        util_pct: ativa ? Math.round(100 * operacao / ativa) : 0, disp_pct: ativa ? Math.round(100 * (ativa - parados) / ativa) : 0 };
+    };
+    const a = resumo(dia), b = ant ? resumo(ant) : null;
+    return [{ data: dia, data_anterior: ant || '', ...a,
+      delta_util_pp: b ? a.util_pct - b.util_pct : 0, delta_operacao: b ? a.operacao - b.operacao : 0, delta_parados: b ? a.parados - b.parados : 0 }];
+  }
+});
+
+dash.calc('kpi_mot', {
+  inputs: ['motoristas'],
+  title: 'Resumo dos motoristas no dia',
+  description: 'Motoristas por status na data e unidade escolhidas, com presença e variação dos que estão em rota.',
+  fn: (motoristas) => {
+    const p = dash.params();
+    const datas = [...new Set(motoristas.map((r) => r.data))].sort();
+    if (!datas.length) return [];
+    const dia = datas.includes(p.dia) ? p.dia : datas[datas.length - 1];
+    const ant = datas[datas.indexOf(dia) - 1] || null;
+    const resumo = (d) => {
+      const rs = motoristas.filter((r) => r.data === d && (!p.unidade || r.unidade === p.unidade));
+      const c = (g) => rs.filter((r) => r.grupo === g).length;
+      const ausentes = rs.filter((r) => r.classe === 'Ausente').length;
+      return { total: rs.length, em_rota: rs.filter((r) => r.classe === 'Em rota').length, em_viagem: c('Em Viagem'), carregado: c('Carregado'),
+        ag_descarga: c('Ag. Descarga'), disponivel: c('Disponível'), interno: c('Interno'), ferias: c('Férias'), folga: c('Folga'), falta: c('Falta'),
+        ausentes, presenca_pct: rs.length ? Math.round(100 * (rs.length - ausentes) / rs.length) : 0 };
+    };
+    const a = resumo(dia), b = ant ? resumo(ant) : null;
+    return [{ data: dia, ...a, delta_em_rota: b ? a.em_rota - b.em_rota : 0 }];
+  }
+});
+
+dash.calc('status_veic', {
+  inputs: ['veiculos'],
+  title: 'Veículos por status e unidade',
+  description: 'Quantidade de veículos em cada status na data escolhida, separada entre Filial BA e Matriz SP.',
+  fn: (veiculos) => {
+    const p = dash.params();
+    const datas = [...new Set(veiculos.map((r) => r.data))].sort();
+    const dia = datas.includes(p.dia) ? p.dia : datas[datas.length - 1];
+    const rs = veiculos.filter((r) => r.data === dia && (!p.unidade || r.unidade === p.unidade) && (!p.categoria || r.categoria === p.categoria));
+    const ordem = ['Carregado', 'Em Viagem', 'Ag. Descarga', 'Retorno', 'Fluxo CD', 'Manobra', 'Vazio', 'Manutenção', 'MEC', 'Sinistro', 'Sem apontamento', 'Inativo'];
+    const total = rs.length;
+    return ordem.map((g) => {
+      const x = rs.filter((r) => r.grupo === g);
+      const filial = x.filter((r) => r.unidade === 'Filial BA').length, matriz = x.filter((r) => r.unidade === 'Matriz SP').length;
+      return { grupo: g, classe: x[0] ? x[0].classe : '', filial, matriz, total: filial + matriz, pct: total ? Math.round(100 * (filial + matriz) / total) : 0 };
+    });
+  }
+});
+
+dash.calc('status_mot', {
+  inputs: ['motoristas'],
+  title: 'Motoristas por status e base',
+  description: 'Quantidade de motoristas em cada status na data escolhida, por base.',
+  fn: (motoristas) => {
+    const p = dash.params();
+    const datas = [...new Set(motoristas.map((r) => r.data))].sort();
+    const dia = datas.includes(p.dia) ? p.dia : datas[datas.length - 1];
+    const rs = motoristas.filter((r) => r.data === dia && (!p.unidade || r.unidade === p.unidade));
+    const ordem = ['Em Viagem', 'Carregado', 'Ag. Descarga', 'Disponível', 'Interno', 'Férias', 'Folga', 'Falta'];
+    return ordem.map((g) => {
+      const x = rs.filter((r) => r.grupo === g);
+      const cd_filial = x.filter((r) => r.base === 'CD Filial BA').length, fabrica = x.filter((r) => r.base === 'Fábrica Filial BA').length, matriz = x.filter((r) => r.base === 'Matriz SP').length;
+      return { grupo: g, cd_filial, fabrica, matriz, total: cd_filial + fabrica + matriz };
+    });
+  }
+});
+
+dash.calc('categoria', {
+  inputs: ['veiculos'],
+  title: 'Frota por categoria',
+  description: 'Veículos de cada categoria por situação na data e unidade escolhidas, com a utilização.',
+  fn: (veiculos) => {
+    const p = dash.params();
+    const datas = [...new Set(veiculos.map((r) => r.data))].sort();
+    const dia = datas.includes(p.dia) ? p.dia : datas[datas.length - 1];
+    const rs = veiculos.filter((r) => r.data === dia && (!p.unidade || r.unidade === p.unidade));
+    const cats = [...new Set(rs.map((r) => r.categoria))].sort();
+    return cats.map((categoria) => {
+      const x = rs.filter((r) => r.categoria === categoria);
+      const k = (c) => x.filter((r) => r.classe === c).length;
+      const inativos = x.filter((r) => r.grupo === 'Inativo').length;
+      const ativos = x.length - inativos, em_operacao = k('Em operação');
+      return { categoria, total: x.length, em_operacao, disponivel: k('Disponível'), parados: k('Parado'), fora: k('Fora de operação'),
+        util_pct: ativos ? Math.round(100 * em_operacao / ativos) : 0 };
+    }).sort((a, b) => b.total - a.total);
+  }
+});
+
+dash.calc('lista_veic', {
+  inputs: ['veiculos'],
+  title: 'Veículos no dia',
+  description: 'Cada veículo com o status na data escolhida e há quantos dias apontados seguidos está nele.',
+  fn: (veiculos) => {
+    const p = dash.params();
+    const datas = [...new Set(veiculos.map((r) => r.data))].sort();
+    const dia = datas.includes(p.dia) ? p.dia : datas[datas.length - 1];
+    const ate = datas.slice(0, datas.indexOf(dia) + 1);
+    const porPlaca = d3.group(veiculos, (r) => r.placa);
+    const out = [];
+    porPlaca.forEach((rs, placa) => {
+      const hoje = rs.find((r) => r.data === dia);
+      if (!hoje) return;
+      if (p.unidade && hoje.unidade !== p.unidade) return;
+      if (p.categoria && hoje.categoria !== p.categoria) return;
+      if (p.status && hoje.grupo !== p.status) return;
+      const m = new Map(rs.map((r) => [r.data, r.grupo]));
+      let dias = 0;
+      for (let i = ate.length - 1; i >= 0 && m.get(ate[i]) === hoje.grupo; i--) dias++;
+      out.push({ placa, unidade: hoje.unidade, categoria: hoje.categoria, modelo: hoje.modelo, grupo: hoje.grupo, status: hoje.status, dias_status: dias });
+    });
+    return out.sort((a, b) => a.grupo.localeCompare(b.grupo) || b.dias_status - a.dias_status || a.placa.localeCompare(b.placa));
+  }
+});
+
+dash.calc('parados', {
+  inputs: ['veiculos'],
+  title: 'Veículos parados no dia',
+  description: 'Veículos em manutenção, MEC ou sinistro na data escolhida e há quantos dias apontados seguidos estão parados.',
+  fn: (veiculos) => {
+    const p = dash.params();
+    const datas = [...new Set(veiculos.map((r) => r.data))].sort();
+    const dia = datas.includes(p.dia) ? p.dia : datas[datas.length - 1];
+    const ate = datas.slice(0, datas.indexOf(dia) + 1);
+    const out = [];
+    d3.group(veiculos, (r) => r.placa).forEach((rs, placa) => {
+      const hoje = rs.find((r) => r.data === dia);
+      if (!hoje || hoje.classe !== 'Parado') return;
+      if ((p.unidade && hoje.unidade !== p.unidade) || (p.categoria && hoje.categoria !== p.categoria)) return;
+      const m = new Map(rs.map((r) => [r.data, r.classe]));
+      let dias = 0;
+      for (let i = ate.length - 1; i >= 0 && m.get(ate[i]) === 'Parado'; i--) dias++;
+      out.push({ placa, unidade: hoje.unidade, categoria: hoje.categoria, modelo: hoje.modelo, grupo: hoje.grupo, dias });
+    });
+    return out.sort((a, b) => b.dias - a.dias || a.placa.localeCompare(b.placa));
+  }
+});
+
+dash.calc('alertas', {
+  inputs: ['veiculos', 'motoristas'],
+  title: 'Alertas do dia',
+  description: 'Situações que pedem ação na data escolhida: parados há 3+ dias, vazios há 3+ dias, aguardando descarga há 2+ dias, sem apontamento e faltas.',
+  fn: (veiculos, motoristas) => {
+    const p = dash.params();
+    const datas = [...new Set(veiculos.map((r) => r.data))].sort();
+    const dia = datas.includes(p.dia) ? p.dia : datas[datas.length - 1];
+    const ate = datas.slice(0, datas.indexOf(dia) + 1);
+    const out = [];
+    d3.group(veiculos, (r) => r.placa).forEach((rs, placa) => {
+      const hoje = rs.find((r) => r.data === dia);
+      if (!hoje || hoje.grupo === 'Inativo') return;
+      if ((p.unidade && hoje.unidade !== p.unidade) || (p.categoria && hoje.categoria !== p.categoria)) return;
+      const m = new Map(rs.map((r) => [r.data, r]));
+      const seq = (teste) => { let n = 0; for (let i = ate.length - 1; i >= 0 && m.get(ate[i]) && teste(m.get(ate[i])); i--) n++; return n; };
+      if (hoje.classe === 'Parado') {
+        const n = seq((r) => r.classe === 'Parado');
+        if (n >= 3) out.push({ chave: 'parado-' + placa, nivel: 'Crítico', tipo: 'Parado', item: placa, unidade: hoje.unidade, detalhe: hoje.grupo + ' · ' + hoje.categoria, dias: n });
+      } else if (hoje.grupo === 'Vazio') {
+        const n = seq((r) => r.grupo === 'Vazio');
+        if (n >= 3) out.push({ chave: 'ocioso-' + placa, nivel: 'Atenção', tipo: 'Ocioso', item: placa, unidade: hoje.unidade, detalhe: 'Vazio · ' + hoje.categoria, dias: n });
+      } else if (hoje.grupo === 'Ag. Descarga') {
+        const n = seq((r) => r.grupo === 'Ag. Descarga');
+        if (n >= 2) out.push({ chave: 'descarga-' + placa, nivel: 'Atenção', tipo: 'Descarga demorada', item: placa, unidade: hoje.unidade, detalhe: 'Aguardando descarga no cliente', dias: n });
+      } else if (hoje.grupo === 'Sem apontamento') {
+        out.push({ chave: 'semapont-' + placa, nivel: 'Atenção', tipo: 'Sem apontamento', item: placa, unidade: hoje.unidade, detalhe: 'Veículo ativo sem status no Cockpit', dias: 1 });
+      }
+    });
+    motoristas.filter((r) => r.data === dia && r.grupo === 'Falta' && (!p.unidade || r.unidade === p.unidade)).forEach((r) => {
+      out.push({ chave: 'falta-' + r.motorista, nivel: 'Crítico', tipo: 'Falta', item: r.motorista, unidade: r.unidade, detalhe: r.base, dias: 1 });
+    });
+    const peso = { 'Crítico': 0, 'Atenção': 1 };
+    return out.sort((a, b) => peso[a.nivel] - peso[b.nivel] || b.dias - a.dias || a.item.localeCompare(b.item));
+  }
+});
+
+dash.calc('motoristas_dia', {
+  inputs: ['motoristas'],
+  title: 'Rotina dos motoristas',
+  description: 'Status de cada motorista na data escolhida e quantos dias apontados ele passou em rota até ela.',
+  fn: (motoristas) => {
+    const p = dash.params();
+    const datas = [...new Set(motoristas.map((r) => r.data))].sort();
+    const dia = datas.includes(p.dia) ? p.dia : datas[datas.length - 1];
+    const out = [];
+    d3.group(motoristas, (r) => r.motorista).forEach((rs, motorista) => {
+      const hoje = rs.find((r) => r.data === dia);
+      if (!hoje || (p.unidade && hoje.unidade !== p.unidade)) return;
+      const ate = rs.filter((r) => r.data <= dia);
+      out.push({ motorista, base: hoje.base, unidade: hoje.unidade, grupo: hoje.grupo, status: hoje.status,
+        dias_rota: ate.filter((r) => r.classe === 'Em rota').length, dias_periodo: ate.length });
+    });
+    return out.sort((a, b) => a.base.localeCompare(b.base) || b.dias_rota - a.dias_rota || a.motorista.localeCompare(b.motorista));
+  }
+});
+
+dash.calc('tendencia', {
+  inputs: ['historico'],
+  title: 'Utilização e parados por dia',
+  description: 'Para cada dia útil apontado em outubro e novembro: utilização (em operação ÷ frota ativa) e veículos parados, por unidade e no total.',
+  fn: (historico) => {
+    const p = dash.params();
+    const series = p.unidade ? [p.unidade] : ['Total', 'Filial BA', 'Matriz SP'];
+    const out = [];
+    d3.group(historico, (r) => r.data).forEach((rs, data) => {
+      series.forEach((serie) => {
+        const x = serie === 'Total' ? rs : rs.filter((r) => r.unidade === serie);
+        const soma = (f) => d3.sum(x.filter(f), (r) => Number(r.veiculos));
+        const frota = soma(() => true), inativos = soma((r) => r.grupo === 'Inativo'), ativa = frota - inativos;
+        const operacao = soma((r) => r.classe === 'Em operação'), parados = soma((r) => r.classe === 'Parado');
+        out.push({ chave: data + '|' + serie, data, serie, ativa, operacao, parados, vazio: soma((r) => r.grupo === 'Vazio'),
+          util_pct: ativa ? Math.round(100 * operacao / ativa) : 0 });
+      });
+    });
+    return out.sort((a, b) => a.data.localeCompare(b.data));
+  }
+});
+
+dash.calc('manut', {
+  inputs: ['manutencoes', 'veiculos'],
+  title: 'Controle de manutenções',
+  description: 'Registros do controle de manutenções, com dias em aberto até a data escolhida ou lead time das ordens concluídas.',
+  fn: (manutencoes, veiculos) => {
+    const p = dash.params();
+    const datas = [...new Set(veiculos.map((r) => r.data))].sort();
+    const dia = datas.includes(p.dia) ? p.dia : datas[datas.length - 1];
+    const ref = d3.utcParse('%Y-%m-%d')(dia);
+    return manutencoes.filter((r) => !p.unidade || r.unidade === p.unidade).map((r) => {
+      const ent = d3.utcParse('%Y-%m-%d')(r.entrada);
+      const aberta = !r.saida;
+      const dias = aberta ? (ent && ref ? Math.max(0, Math.round((ref - ent) / 864e5)) : null) : (r.lead_time_dias ? Number(r.lead_time_dias) : null);
+      return { placa: r.placa, unidade: r.unidade, tipo: r.tipo, entrada: r.entrada, saida: r.saida || '', situacao: aberta ? 'Em aberto' : 'Concluída', dias,
+        motivo: r.motivo || '', observacao: r.observacao || '' };
+    }).sort((a, b) => (a.situacao === b.situacao ? (b.dias || 0) - (a.dias || 0) : a.situacao === 'Em aberto' ? -1 : 1));
+  }
+});
+
+dash.calc('manut_resumo', {
+  inputs: ['manut'],
+  title: 'Resumo das manutenções',
+  description: 'Ordens em aberto e lead time médio, em dias, das ordens concluídas.',
+  fn: (manut) => {
+    const concl = manut.filter((r) => r.situacao === 'Concluída' && r.dias != null);
+    return [{ abertas: manut.filter((r) => r.situacao === 'Em aberto').length, lead_medio: concl.length ? Math.round(d3.mean(concl, (r) => r.dias)) : 0 }];
+  }
+});
+</script>
+
+<script>
+/* Tema claro/escuro, abas e filtros */
+(function () {
+  const root = document.getElementById('cdt');
+  if (root) {
+    let escuro = false;
+    try { escuro = window.matchMedia('(prefers-color-scheme: dark)').matches; } catch (e) {}
+    root.classList.toggle('cdt-dark', escuro);
+    document.querySelectorAll('#tema').forEach((b) => b.addEventListener('click', () => root.classList.toggle('cdt-dark')));
+  }
+
+  const abrir = (id, link) => {
+    const secs = document.querySelectorAll('.cdt-sec');
+    let achou = false;
+    secs.forEach((s) => { if (s.id === id) achou = true; });
+    if (!achou) return;
+    secs.forEach((s) => { s.hidden = s.id !== id; });
+    document.querySelectorAll('.cdt-tab').forEach((t) => {
+      t.classList.toggle('is-on', t.getAttribute('data-tab') === id);
+      t.setAttribute('aria-current', t.getAttribute('data-tab') === id ? 'page' : 'false');
+    });
+    if (link) dash.setLink(id);
+  };
+  window.CDT.abrir = abrir;
+  document.querySelectorAll('.cdt-tab').forEach((t) => t.addEventListener('click', () => abrir(t.getAttribute('data-tab'), true)));
+  const h = (location.hash || '').replace('#', '');
+  if (h) abrir(h, false);
+
+  document.querySelectorAll('#f-uni').forEach((s) => s.addEventListener('change', () => dash.setParams({ unidade: s.value || null })));
+  document.querySelectorAll('#limpar').forEach((b) => b.addEventListener('click', () => dash.resetParams()));
+  dash.onData(() => {
+    const p = dash.params();
+    document.querySelectorAll('#f-uni').forEach((s) => { if (document.activeElement !== s) s.value = p.unidade || ''; });
+  });
+})();
+</script>
+
+<script>
+/* Números do topo e dos cartões */
+(function () {
+  const um = (src, campo, fmt) => (el) => {
+    const d = dash.data(src);
+    if (d.status !== 'ok' || !d.data || !d.data[0]) { el.textContent = '—'; return; }
+    el.textContent = fmt ? fmt(d.data[0][campo], d.data[0]) : String(d.data[0][campo]);
+  };
+  const pct = (v) => v + '%';
+  dash.draw('t_dia', (el) => {
+    const d = dash.data('kpi_veic');
+    el.textContent = d.status === 'ok' && d.data[0] ? CDT.fmtDia(d.data[0].data) : '—';
+  });
+  dash.draw('t_op', um('kpi_veic', 'operacao'));
+  dash.draw('t_ativa', um('kpi_veic', 'ativa'));
+  dash.draw('t_util', um('kpi_veic', 'util_pct', pct));
+  dash.draw('t_par', um('kpi_veic', 'parados'));
+  dash.draw('t_rota', um('kpi_mot', 'em_rota'));
+  [['k_ativa', 'ativa'], ['k_inat', 'inativos'], ['k_op', 'operacao'], ['k_carr', 'carregado'], ['k_viag', 'em_viagem'], ['k_ret', 'retorno'],
+    ['k_desc', 'ag_descarga'], ['k_vaz', 'vazio'], ['k_par', 'parados'], ['mp_par', 'parados'], ['mp_man', 'manutencao'], ['mp_mec', 'mec'], ['mp_sin', 'sinistro']]
+    .forEach(([n, c]) => dash.draw(n, um('kpi_veic', c)));
+  dash.draw('k_util', um('kpi_veic', 'util_pct', pct));
+  dash.draw('k_disp', um('kpi_veic', 'disp_pct', pct));
+  dash.draw('k_dutil', (el) => {
+    const d = dash.data('kpi_veic');
+    if (d.status !== 'ok' || !d.data[0]) { el.textContent = '—'; el.className = ''; return; }
+    const v = d.data[0].delta_util_pp;
+    el.textContent = CDT.sinal(v, ' p.p.');
+    el.className = v > 0 ? 'cdt-good' : v < 0 ? 'cdt-bad' : 'cdt-flat';
+  });
+  [['m_tot', 'total'], ['m_rota', 'em_rota'], ['m_disp', 'disponivel'], ['m_int', 'interno'], ['m_aus', 'ausentes']]
+    .forEach(([n, c]) => dash.draw(n, um('kpi_mot', c)));
+  dash.draw('m_pres', um('kpi_mot', 'presenca_pct', pct));
+  dash.draw('m_drota', (el) => {
+    const d = dash.data('kpi_mot');
+    if (d.status !== 'ok' || !d.data[0]) { el.textContent = '—'; el.className = ''; return; }
+    const v = d.data[0].delta_em_rota;
+    el.textContent = CDT.sinal(v);
+    el.className = v > 0 ? 'cdt-good' : v < 0 ? 'cdt-bad' : 'cdt-flat';
+  });
+  dash.draw('mp_abertas', um('manut_resumo', 'abertas'));
+  dash.draw('mp_lead', um('manut_resumo', 'lead_medio'));
+})();
+</script>
+
+<script>
+/* Seletores que dependem dos dados */
+dash.draw('sel_dia', (sel) => {
+  const d = dash.data('veiculos');
+  const datas = d.status === 'ok' ? [...new Set(d.data.map((r) => r.data))].sort().reverse() : [];
+  sel.replaceChildren(...datas.map((x) => new Option(CDT.fmtDia(x).replace(' (', '/' + x.slice(0, 4) + ' ('), x)));
+  const p = dash.params();
+  sel.value = datas.includes(p.dia) ? p.dia : (datas[0] || '');
+  sel.onchange = () => dash.setParams({ dia: sel.value || null });
+});
+dash.draw('sel_cat', (sel) => {
+  const d = dash.data('veiculos');
+  const cats = d.status === 'ok' ? [...new Set(d.data.map((r) => r.categoria))].sort() : [];
+  sel.replaceChildren(new Option('Todas as categorias', ''), ...cats.map((c) => new Option(c, c)));
+  sel.value = dash.params().categoria || '';
+  sel.onchange = () => dash.setParams({ categoria: sel.value || null });
+});
+dash.draw('sel_status', (sel) => {
+  const d = dash.data('status_veic');
+  const gs = d.status === 'ok' ? d.data.filter((r) => r.total > 0).map((r) => r.grupo) : [];
+  sel.replaceChildren(new Option('Todos os status', ''), ...gs.map((g) => new Option(g, g)));
+  const st = dash.params().status || '';
+  sel.value = gs.includes(st) ? st : '';
+  sel.onchange = () => dash.setParams({ status: sel.value || null });
+});
+</script>
+
+<script>
+/* Gráficos da visão geral */
+dash.draw('ch_status', (el) => {
+  el.replaceChildren();
+  const rows = CDT.ok('status_veic');
+  if (!rows) { el.textContent = dash.data('status_veic').status === 'error' ? 'Não foi possível carregar.' : '—'; return; }
+  const data = rows.filter((r) => r.total > 0);
+  const W = el.clientWidth || 400, rowH = 26, H = data.length * rowH + 8;
+  const svg = d3.select(el).append('svg').attr('width', '100%').attr('viewBox', `0 0 ${W} ${H}`).attr('role', 'img')
+    .attr('aria-label', 'Barras com a quantidade de veículos em cada status no dia');
+  const lab = svg.append('g');
+  const nomes = lab.selectAll('text').data(data).join('text').attr('x', 0).attr('y', (d, i) => i * rowH + rowH / 2 + 4).text((d) => d.grupo);
+  let lw = 0; nomes.each(function () { lw = Math.max(lw, this.getComputedTextLength()); });
+  const left = Math.ceil(lw) + 12, right = 70;
+  const x = d3.scaleLinear().domain([0, d3.max(data, (d) => d.total) || 1]).range([0, Math.max(40, W - left - right)]);
+  const tip = CDT.tip(el);
+  const g = svg.append('g').attr('transform', `translate(${left},0)`);
+  g.selectAll('rect').data(data).join('rect').attr('class', 'bar cdt-clickable')
+    .attr('y', (d, i) => i * rowH + 5).attr('height', rowH - 10).attr('rx', 3).attr('width', (d) => Math.max(2, x(d.total)))
+    .style('fill', (d) => CDT.cor(d.grupo))
+    .on('mousemove', (ev, d) => tip.show(ev, [d.grupo, `Total: ${d.total} (${d.pct}%)`, `Filial BA: ${d.filial}`, `Matriz SP: ${d.matriz}`]))
+    .on('mouseleave', () => tip.hide())
+    .on('click', (ev, d) => { dash.setParams({ status: d.grupo }); CDT.abrir('frota', true); });
+  g.selectAll('text.v').data(data).join('text').attr('class', 'v lbl-strong').attr('x', (d) => Math.max(2, x(d.total)) + 6)
+    .attr('y', (d, i) => i * rowH + rowH / 2 + 4).text((d) => `${d.total} · ${d.pct}%`);
+});
+
+dash.draw('ch_unid', (el) => {
+  el.replaceChildren();
+  const rows = CDT.ok('status_veic');
+  if (!rows) { el.textContent = '—'; return; }
+  const classe = (g) => (CDT.OP.includes(g) ? 'op' : g === 'Vazio' ? 'disp' : CDT.PAR.includes(g) ? 'par' : 'fora');
+  const unids = ['Filial BA', 'Matriz SP'].map((u) => {
+    const k = u === 'Filial BA' ? 'filial' : 'matriz';
+    const t = { op: 0, disp: 0, par: 0, fora: 0 };
+    rows.forEach((r) => { t[classe(r.grupo)] += r[k]; });
+    return { u, ...t, total: t.op + t.disp + t.par + t.fora };
+  }).filter((d) => d.total > 0);
+  if (!unids.length) { const p = document.createElement('p'); p.className = 'cdt-empty'; p.textContent = 'Nenhum veículo com os filtros escolhidos.'; el.append(p); return; }
+  const W = el.clientWidth || 400, rowH = 54, H = unids.length * rowH;
+  const svg = d3.select(el).append('svg').attr('width', '100%').attr('viewBox', `0 0 ${W} ${H}`).attr('role', 'img')
+    .attr('aria-label', 'Barras empilhadas com a situação da frota de cada unidade');
+  const tip = CDT.tip(el);
+  const nomes = { op: 'Em operação', disp: 'Disponível (vazio)', par: 'Parado', fora: 'Inativo / sem apontamento' };
+  const cores = { op: 'var(--c-op)', disp: 'var(--c-disp)', par: 'var(--c-par)', fora: 'var(--c-fora)' };
+  unids.forEach((d, i) => {
+    const y = i * rowH;
+    svg.append('text').attr('class', 'lbl-strong').attr('x', 0).attr('y', y + 14).text(`${d.u} · ${d.total} veículos`);
+    const x = d3.scaleLinear().domain([0, d.total]).range([0, W]);
+    let acc = 0;
+    ['op', 'disp', 'par', 'fora'].forEach((k) => {
+      const v = d[k]; if (!v) return;
+      const x0 = x(acc); acc += v;
+      const w = x(acc) - x0;
+      svg.append('rect').attr('class', 'seg').attr('x', x0).attr('y', y + 22).attr('width', Math.max(0, w - 1)).attr('height', 22).style('fill', cores[k])
+        .on('mousemove', (ev) => tip.show(ev, [d.u, `${nomes[k]}: ${v} (${Math.round(100 * v / d.total)}%)`])).on('mouseleave', () => tip.hide());
+      if (w > 34) svg.append('text').attr('x', x0 + 6).attr('y', y + 37).style('fill', k === 'fora' ? 'var(--fg)' : '#fff').style('font-weight', '600')
+        .style('pointer-events', 'none').text(`${Math.round(100 * v / d.total)}%`);
+    });
+  });
+});
+</script>
+
+<script>
+/* Tabelas */
+(function () {
+  const td = (txt, cls) => { const c = document.createElement('td'); if (cls) c.className = cls; if (txt instanceof Node) c.append(txt); else c.textContent = txt == null ? '' : String(txt); return c; };
+  const vazio = (tb, cols, msg) => { const tr = document.createElement('tr'); const c = td(msg); c.colSpan = cols; c.className = 'cdt-empty'; tr.append(c); tb.replaceChildren(tr); };
+  const pronto = (tb, id, cols) => {
+    const d = dash.data(id);
+    if (d.status !== 'ok') { vazio(tb, cols, d.status === 'error' ? 'Não foi possível carregar.' : 'Carregando…'); return null; }
+    return d.data;
+  };
+
+  dash.draw('tb_alertas', (tb) => {
+    const rows = pronto(tb, 'alertas', 6); if (!rows) return;
+    if (!rows.length) { vazio(tb, 6, 'Nenhum alerta para o dia e filtros escolhidos.'); return; }
+    tb.replaceChildren(...rows.map((r) => {
+      const tr = document.createElement('tr');
+      const lv = document.createElement('span'); lv.className = 'cdt-lvl ' + (r.nivel === 'Crítico' ? 'crit' : 'att'); lv.textContent = r.nivel;
+      tr.append(td(lv), td(r.tipo), td(r.item), td(r.unidade), td(r.detalhe), td(r.dias, 'num'));
+      return tr;
+    }));
+  });
+
+  dash.draw('tb_cat', (tb) => {
+    const rows = pronto(tb, 'categoria', 8); if (!rows) return;
+    const cat = dash.params().categoria || '';
+    tb.replaceChildren(...rows.map((r) => {
+      const tr = document.createElement('tr'); if (r.categoria === cat) tr.className = 'is-sel';
+      const m = document.createElement('div'); m.className = 'cdt-meter'; const s = document.createElement('span'); s.style.width = r.util_pct + '%'; m.append(s);
+      tr.append(td(r.categoria), td(r.total, 'num'), td(r.em_operacao, 'num'), td(r.disponivel, 'num'), td(r.parados, 'num'), td(r.fora, 'num'), td(r.util_pct, 'num'), td(m));
+      return tr;
+    }));
+  });
+
+  dash.draw('tb_lista', (tb) => {
+    const rows = pronto(tb, 'lista_veic', 6); if (!rows) return;
+    if (!rows.length) { vazio(tb, 6, 'Nenhum veículo para os filtros escolhidos.'); return; }
+    tb.replaceChildren(...rows.map((r) => {
+      const tr = document.createElement('tr');
+      tr.append(td(r.placa), td(r.unidade), td(r.categoria), td(r.modelo), td(CDT.pill(r.grupo)), td(r.dias_status, 'num'));
+      return tr;
+    }));
+  });
+
+  dash.draw('tb_parados', (tb) => {
+    const rows = pronto(tb, 'parados', 6); if (!rows) return;
+    if (!rows.length) { vazio(tb, 6, 'Nenhum veículo parado no dia.'); return; }
+    tb.replaceChildren(...rows.map((r) => {
+      const tr = document.createElement('tr');
+      tr.append(td(r.placa), td(r.unidade), td(r.categoria), td(r.modelo), td(CDT.pill(r.grupo)), td(r.dias, 'num'));
+      return tr;
+    }));
+  });
+
+  dash.draw('tb_mot_status', (tb) => {
+    const rows = pronto(tb, 'status_mot', 5); if (!rows) return;
+    tb.replaceChildren(...rows.map((r) => {
+      const tr = document.createElement('tr');
+      tr.append(td(CDT.pill(r.grupo)), td(r.cd_filial, 'num'), td(r.fabrica, 'num'), td(r.matriz, 'num'), td(r.total, 'num'));
+      return tr;
+    }));
+  });
+
+  dash.draw('tb_mot', (tb) => {
+    const rows = pronto(tb, 'motoristas_dia', 6); if (!rows) return;
+    const raw = CDT.ok('motoristas') || [];
+    const hist = d3.group(raw, (r) => r.motorista);
+    const p = dash.params();
+    const datas = [...new Set(raw.map((r) => r.data))].sort();
+    const ate = datas.includes(p.dia) ? p.dia : datas[datas.length - 1];
+    if (!rows.length) { vazio(tb, 6, 'Nenhum motorista para os filtros escolhidos.'); return; }
+    tb.replaceChildren(...rows.map((r) => {
+      const tr = document.createElement('tr');
+      const strip = document.createElement('span'); strip.className = 'cdt-strip';
+      (hist.get(r.motorista) || []).filter((h) => h.data <= ate).sort((a, b) => a.data.localeCompare(b.data)).forEach((h) => {
+        const s = document.createElement('span'); s.style.setProperty('--sw', CDT.cor(h.grupo)); s.title = CDT.fmtCurto(h.data) + ': ' + h.grupo; strip.append(s);
+      });
+      tr.append(td(r.motorista), td(r.base), td(CDT.pill(r.grupo)), td(r.dias_rota, 'num'), td(r.dias_periodo, 'num'), td(strip));
+      return tr;
+    }));
+  });
+
+  dash.draw('tb_manut', (tb) => {
+    const rows = pronto(tb, 'manut', 9); if (!rows) return;
+    if (!rows.length) { vazio(tb, 9, 'Nenhum registro de manutenção para a unidade.'); return; }
+    tb.replaceChildren(...rows.map((r) => {
+      const tr = document.createElement('tr'); tr.setAttribute('data-key', encodeURIComponent(r.placa) + ',' + encodeURIComponent(r.entrada));
+      const sit = document.createElement('span'); sit.className = 'cdt-lvl ' + (r.situacao === 'Em aberto' ? 'att' : ''); sit.textContent = r.situacao;
+      if (r.situacao !== 'Em aberto') { sit.style.background = 'var(--panel2)'; sit.style.color = 'var(--muted)'; }
+      tr.append(td(r.placa), td(r.unidade), td(r.tipo), td(CDT.fmtCurto(r.entrada) + '/' + r.entrada.slice(0, 4)), td(r.saida ? CDT.fmtCurto(r.saida) + '/' + r.saida.slice(0, 4) : '—'),
+        td(sit), td(r.dias == null ? '' : r.dias, 'num'), td(r.motivo || '—'), td(r.observacao || '—'));
+      return tr;
+    }));
+  });
+})();
+</script>
+
+<script>
+/* Linha do tempo, motoristas e tendência */
+dash.draw('ch_timeline', (el) => {
+  el.replaceChildren();
+  const raw = CDT.ok('veiculos');
+  if (!raw) { el.textContent = '—'; return; }
+  const p = dash.params();
+  const rs = raw.filter((r) => (!p.unidade || r.unidade === p.unidade) && (!p.categoria || r.categoria === p.categoria));
+  const datas = [...new Set(raw.map((r) => r.data))].sort();
+  const dia = datas.includes(p.dia) ? p.dia : datas[datas.length - 1];
+  const porPlaca = Array.from(d3.group(rs, (r) => r.placa), ([placa, v]) => ({ placa, v, u: v[0].unidade, c: v[0].categoria }))
+    .filter((d) => d.v.some((r) => r.grupo !== 'Inativo'))
+    .sort((a, b) => a.u.localeCompare(b.u) || a.c.localeCompare(b.c) || a.placa.localeCompare(b.placa));
+  if (!porPlaca.length) { const q = document.createElement('p'); q.className = 'cdt-empty'; q.textContent = 'Nenhum veículo para os filtros escolhidos.'; el.append(q); return; }
+  const W = el.clientWidth || 600, rowH = 16, top = 22;
+  const svg = d3.select(el).append('svg').attr('width', '100%').attr('role', 'img').attr('aria-label', 'Mapa de calor com o status de cada veículo por dia');
+  const nomes = svg.append('g').selectAll('text').data(porPlaca).join('text').attr('x', 0).attr('y', (d, i) => top + i * rowH + 12).text((d) => d.placa);
+  let lw = 0; nomes.each(function () { lw = Math.max(lw, this.getComputedTextLength()); });
+  const left = Math.ceil(lw) + 10;
+  const x = d3.scaleBand().domain(datas).range([left, W]).paddingInner(0.08);
+  const H = top + porPlaca.length * rowH + 4;
+  svg.attr('viewBox', `0 0 ${W} ${H}`);
+  svg.append('g').selectAll('text').data(datas).join('text').attr('x', (d) => x(d) + x.bandwidth() / 2).attr('y', 12).attr('text-anchor', 'middle')
+    .attr('class', (d) => (d === dia ? 'lbl-strong' : null)).text((d) => CDT.fmtCurto(d));
+  const tip = CDT.tip(el);
+  const g = svg.append('g');
+  porPlaca.forEach((d, i) => {
+    const m = new Map(d.v.map((r) => [r.data, r]));
+    g.selectAll(null).data(datas).join('rect').attr('x', (dt) => x(dt)).attr('y', top + i * rowH + 2).attr('width', x.bandwidth()).attr('height', rowH - 3).attr('rx', 2)
+      .style('fill', (dt) => CDT.cor(m.get(dt) ? m.get(dt).grupo : 'Sem apontamento'))
+      .style('opacity', (dt) => (dt > dia ? 0.35 : 1))
+      .on('mousemove', (ev, dt) => { const r = m.get(dt); tip.show(ev, [d.placa + ' · ' + CDT.fmtDia(dt), r ? r.grupo : 'Sem apontamento', d.c + ' · ' + d.u]); })
+      .on('mouseleave', () => tip.hide());
+  });
+  g.append('rect').attr('x', x(dia) - 2).attr('y', top - 2).attr('width', x.bandwidth() + 4).attr('height', porPlaca.length * rowH + 4)
+    .style('fill', 'none').style('stroke', 'var(--fg)').style('stroke-width', 1.5).attr('rx', 3);
+});
+
+dash.draw('ch_mot', (el) => {
+  el.replaceChildren();
+  const rows = CDT.ok('status_mot');
+  if (!rows) { el.textContent = '—'; return; }
+  const data = rows.filter((r) => r.total > 0);
+  if (!data.length) { el.textContent = 'Nenhum motorista para os filtros escolhidos.'; return; }
+  const W = el.clientWidth || 400, rowH = 28, H = data.length * rowH + 4;
+  const svg = d3.select(el).append('svg').attr('width', '100%').attr('viewBox', `0 0 ${W} ${H}`).attr('role', 'img').attr('aria-label', 'Barras empilhadas de motoristas por status e base');
+  const nomes = svg.append('g').selectAll('text').data(data).join('text').attr('x', 0).attr('y', (d, i) => i * rowH + rowH / 2 + 4).text((d) => d.grupo);
+  let lw = 0; nomes.each(function () { lw = Math.max(lw, this.getComputedTextLength()); });
+  const left = Math.ceil(lw) + 12;
+  const x = d3.scaleLinear().domain([0, d3.max(data, (d) => d.total)]).range([0, Math.max(40, W - left - 40)]);
+  const tip = CDT.tip(el);
+  const bases = [['cd_filial', 'CD Filial BA', 'var(--s-carregado)'], ['fabrica', 'Fábrica Filial BA', 'var(--s-ferias)'], ['matriz', 'Matriz SP', 'var(--s-retorno)']];
+  data.forEach((d, i) => {
+    let acc = 0;
+    bases.forEach(([k, nome, cor]) => {
+      const v = d[k]; if (!v) return;
+      svg.append('rect').attr('class', 'seg').attr('x', left + x(acc)).attr('y', i * rowH + 5).attr('width', Math.max(1, x(v) - 1)).attr('height', rowH - 10).attr('rx', 2).style('fill', cor)
+        .on('mousemove', (ev) => tip.show(ev, [d.grupo, `${nome}: ${v}`, `Total: ${d.total}`])).on('mouseleave', () => tip.hide());
+      acc += v;
+    });
+    svg.append('text').attr('class', 'lbl-strong').attr('x', left + x(d.total) + 6).attr('y', i * rowH + rowH / 2 + 4).text(d.total);
+  });
+});
+
+(function () {
+  const corSerie = { 'Total': 'var(--fg)', 'Filial BA': 'var(--s-carregado)', 'Matriz SP': 'var(--s-retorno)' };
+  const base = (el, rows, campo, rotulo, fmt, yMax) => {
+    const W = el.clientWidth || 600, H = Math.max(200, el.clientHeight || 240);
+    const datas = [...new Set(rows.map((r) => r.data))].sort();
+    const svg = d3.select(el).append('svg').attr('width', '100%').attr('viewBox', `0 0 ${W} ${H}`).attr('role', 'img').attr('aria-label', rotulo);
+    const y = d3.scaleLinear().domain([0, yMax]).nice().range([H - 26, 10]);
+    const gy = svg.append('g').attr('class', 'grid');
+    const ticks = y.ticks(5);
+    let lw = 0;
+    const tt = gy.selectAll('text').data(ticks).join('text').attr('x', 0).attr('y', (t) => y(t) + 4).text(fmt);
+    tt.each(function () { lw = Math.max(lw, this.getComputedTextLength()); });
+    const left = Math.ceil(lw) + 8;
+    gy.selectAll('line').data(ticks).join('line').attr('x1', left).attr('x2', W).attr('y1', (t) => y(t)).attr('y2', (t) => y(t));
+    const x = d3.scalePoint().domain(datas).range([left + 8, W - 12]);
+    const passo = Math.max(1, Math.ceil(datas.length / Math.max(2, Math.floor((W - left) / 52))));
+    svg.append('g').selectAll('text').data(datas.filter((d, i) => i % passo === 0)).join('text').attr('x', (d) => x(d)).attr('y', H - 6).attr('text-anchor', 'middle').text((d) => CDT.fmtCurto(d));
+    const nov = datas.find((d) => d >= '2026-11-01');
+    if (nov) svg.append('line').attr('x1', x(nov) - 4).attr('x2', x(nov) - 4).attr('y1', 6).attr('y2', H - 24).style('stroke', 'var(--line)').style('stroke-dasharray', '3 3');
+    return { svg, x, y, W, H, datas, left };
+  };
+  dash.draw('ch_trend', (el) => {
+    el.replaceChildren();
+    const rows = CDT.ok('tendencia');
+    if (!rows) { el.textContent = '—'; return; }
+    const c = base(el, rows, 'util_pct', 'Linhas da utilização da frota por dia em outubro e novembro', (t) => t + '%', 100);
+    const series = d3.group(rows, (r) => r.serie);
+    const line = d3.line().x((d) => c.x(d.data)).y((d) => c.y(d.util_pct));
+    series.forEach((v, s) => {
+      c.svg.append('path').datum(v).attr('d', line).style('fill', 'none').style('stroke', corSerie[s]).style('stroke-width', s === 'Total' ? 2.5 : 1.8);
+      const last = v[v.length - 1];
+      c.svg.append('circle').attr('cx', c.x(last.data)).attr('cy', c.y(last.util_pct)).attr('r', 3.5).style('fill', corSerie[s]);
+    });
+    const dia = (dash.data('kpi_veic').data || [])[0];
+    if (dia && c.x(dia.data) != null) c.svg.append('line').attr('x1', c.x(dia.data)).attr('x2', c.x(dia.data)).attr('y1', 6).attr('y2', c.H - 24).style('stroke', 'var(--accent)').style('stroke-width', 1.5);
+    const tip = CDT.tip(el);
+    const guia = c.svg.append('line').attr('y1', 6).attr('y2', c.H - 24).style('stroke', 'var(--muted)').style('opacity', 0);
+    c.svg.append('rect').attr('x', c.left).attr('y', 0).attr('width', c.W - c.left).attr('height', c.H - 20).style('fill', 'transparent')
+      .on('mousemove', (ev) => {
+        const [mx] = d3.pointer(ev);
+        const d = c.datas.reduce((best, dt) => (Math.abs(c.x(dt) - mx) < Math.abs(c.x(best) - mx) ? dt : best), c.datas[0]);
+        guia.attr('x1', c.x(d)).attr('x2', c.x(d)).style('opacity', 1);
+        const linhas = rows.filter((r) => r.data === d).map((r) => `${r.serie}: ${r.util_pct}% (${r.operacao} de ${r.ativa})`);
+        tip.show(ev, [CDT.fmtDia(d), ...linhas]);
+      })
+      .on('mouseleave', () => { tip.hide(); guia.style('opacity', 0); });
+  });
+  dash.draw('ch_par', (el) => {
+    el.replaceChildren();
+    const rows = CDT.ok('tendencia');
+    if (!rows) { el.textContent = '—'; return; }
+    const p = dash.params();
+    const serie = p.unidade || 'Total';
+    const v = rows.filter((r) => r.serie === serie);
+    const c = base(el, v, 'parados', 'Barras de veículos parados por dia', (t) => String(t), (d3.max(v, (r) => r.parados) || 1) * 1.15);
+    const bw = Math.max(3, Math.min(18, (c.W - c.left) / c.datas.length - 4));
+    const tip = CDT.tip(el);
+    c.svg.append('g').selectAll('rect').data(v).join('rect').attr('class', 'bar').attr('x', (d) => c.x(d.data) - bw / 2).attr('width', bw)
+      .attr('y', (d) => c.y(d.parados)).attr('height', (d) => c.y(0) - c.y(d.parados)).attr('rx', 2).style('fill', 'var(--s-manut)')
+      .on('mousemove', (ev, d) => tip.show(ev, [CDT.fmtDia(d.data), `${serie}: ${d.parados} parados`, `Vazios: ${d.vazio}`])).on('mouseleave', () => tip.hide());
+    const ult = v[v.length - 1];
+    if (ult) c.svg.append('text').attr('class', 'lbl-strong').attr('x', c.x(ult.data)).attr('y', c.y(ult.parados) - 6).attr('text-anchor', 'middle').text(ult.parados);
+  });
+})();
+</script>

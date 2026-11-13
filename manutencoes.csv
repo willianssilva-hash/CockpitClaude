@@ -1,0 +1,11 @@
+unidade,placa,tipo,entrada,saida,lead_time_dias,motivo,observacao
+Matriz SP,FHT 6C96,TRUCK,2025-11-11,2026-06-30,231,REVISÃO COMPLETA - REATIVAÇÃO DE FROTA,FORA DO PRAZO
+Matriz SP,FHT 6C91,TRUCK,2026-08-31,,,Aferição de Tacógrafo,
+Matriz SP,FHT 6I14,CAVALO,2026-07-01,,,Vazamento de água no sistema de arrefecimento,Sem previsão
+Matriz SP,FHT 7C03,CARRETA,2026-06-22,2026-08-24,63,ARRUMAR PORTA,
+Matriz SP,QSP 3J30,CARRETA,2026-07-06,,,SINISTRO (DEVSON IBA) BATEU BAU,Sem previsão
+Filial BA,FHT 6303,TRUCK,2025-07-11,,,SOFREU SINISTRO,FORA DO PRAZO / Sem previsão
+Filial BA,RCP 8E53,CARRETA,2026-09-22,2026-10-06,14,,
+Filial BA,FHT 6316,TRUCK,2026-10-06,2026-10-25,19,,
+Matriz SP,FHT 6D13,TRUCK,2026-09-30,,,Reparo de infiltração no baú,
+Filial BA,FHT 6816,CAVALO,2026-10-05,2026-10-15,10,Revisão geral,

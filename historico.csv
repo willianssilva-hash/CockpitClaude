@@ -1,0 +1,569 @@
+data,unidade,grupo,classe,veiculos
+2026-10-01,Filial BA,Ag. Descarga,Em operação,3
+2026-10-01,Filial BA,Carregado,Em operação,14
+2026-10-01,Filial BA,Em Viagem,Em operação,9
+2026-10-01,Filial BA,Fluxo CD,Em operação,8
+2026-10-01,Filial BA,Manobra,Em operação,1
+2026-10-01,Filial BA,Manutenção,Parado,5
+2026-10-01,Filial BA,Retorno,Em operação,1
+2026-10-01,Filial BA,Sinistro,Parado,1
+2026-10-01,Filial BA,Vazio,Disponível,9
+2026-10-01,Matriz SP,Ag. Descarga,Em operação,1
+2026-10-01,Matriz SP,Carregado,Em operação,20
+2026-10-01,Matriz SP,Em Viagem,Em operação,14
+2026-10-01,Matriz SP,Inativo,Fora de operação,20
+2026-10-01,Matriz SP,MEC,Parado,1
+2026-10-01,Matriz SP,Manobra,Em operação,2
+2026-10-01,Matriz SP,Manutenção,Parado,7
+2026-10-01,Matriz SP,Vazio,Disponível,21
+2026-10-02,Filial BA,Carregado,Em operação,16
+2026-10-02,Filial BA,Em Viagem,Em operação,9
+2026-10-02,Filial BA,Fluxo CD,Em operação,8
+2026-10-02,Filial BA,Manobra,Em operação,1
+2026-10-02,Filial BA,Manutenção,Parado,5
+2026-10-02,Filial BA,Retorno,Em operação,3
+2026-10-02,Filial BA,Sinistro,Parado,1
+2026-10-02,Filial BA,Vazio,Disponível,8
+2026-10-02,Matriz SP,Ag. Descarga,Em operação,1
+2026-10-02,Matriz SP,Carregado,Em operação,22
+2026-10-02,Matriz SP,Em Viagem,Em operação,18
+2026-10-02,Matriz SP,Inativo,Fora de operação,20
+2026-10-02,Matriz SP,MEC,Parado,1
+2026-10-02,Matriz SP,Manobra,Em operação,3
+2026-10-02,Matriz SP,Manutenção,Parado,7
+2026-10-02,Matriz SP,Vazio,Disponível,14
+2026-10-03,Filial BA,Ag. Descarga,Em operação,2
+2026-10-03,Filial BA,Carregado,Em operação,13
+2026-10-03,Filial BA,Em Viagem,Em operação,10
+2026-10-03,Filial BA,Fluxo CD,Em operação,8
+2026-10-03,Filial BA,Manobra,Em operação,1
+2026-10-03,Filial BA,Manutenção,Parado,3
+2026-10-03,Filial BA,Retorno,Em operação,5
+2026-10-03,Filial BA,Sinistro,Parado,1
+2026-10-03,Filial BA,Vazio,Disponível,8
+2026-10-03,Matriz SP,Carregado,Em operação,20
+2026-10-03,Matriz SP,Em Viagem,Em operação,25
+2026-10-03,Matriz SP,Inativo,Fora de operação,20
+2026-10-03,Matriz SP,MEC,Parado,1
+2026-10-03,Matriz SP,Manobra,Em operação,3
+2026-10-03,Matriz SP,Manutenção,Parado,6
+2026-10-03,Matriz SP,Retorno,Em operação,1
+2026-10-03,Matriz SP,Vazio,Disponível,8
+2026-10-06,Filial BA,Ag. Descarga,Em operação,4
+2026-10-06,Filial BA,Carregado,Em operação,9
+2026-10-06,Filial BA,Em Viagem,Em operação,7
+2026-10-06,Filial BA,Fluxo CD,Em operação,9
+2026-10-06,Filial BA,Manobra,Em operação,3
+2026-10-06,Filial BA,Manutenção,Parado,4
+2026-10-06,Filial BA,Sinistro,Parado,1
+2026-10-06,Filial BA,Vazio,Disponível,14
+2026-10-06,Matriz SP,Carregado,Em operação,21
+2026-10-06,Matriz SP,Em Viagem,Em operação,28
+2026-10-06,Matriz SP,MEC,Parado,1
+2026-10-06,Matriz SP,Manobra,Em operação,4
+2026-10-06,Matriz SP,Manutenção,Parado,5
+2026-10-06,Matriz SP,Vazio,Disponível,6
+2026-10-07,Filial BA,Ag. Descarga,Em operação,4
+2026-10-07,Filial BA,Carregado,Em operação,9
+2026-10-07,Filial BA,Em Viagem,Em operação,7
+2026-10-07,Filial BA,Fluxo CD,Em operação,9
+2026-10-07,Filial BA,Manobra,Em operação,3
+2026-10-07,Filial BA,Manutenção,Parado,4
+2026-10-07,Filial BA,Sinistro,Parado,1
+2026-10-07,Filial BA,Vazio,Disponível,14
+2026-10-07,Matriz SP,Carregado,Em operação,21
+2026-10-07,Matriz SP,Em Viagem,Em operação,29
+2026-10-07,Matriz SP,Inativo,Fora de operação,20
+2026-10-07,Matriz SP,MEC,Parado,1
+2026-10-07,Matriz SP,Manobra,Em operação,4
+2026-10-07,Matriz SP,Manutenção,Parado,5
+2026-10-07,Matriz SP,Vazio,Disponível,6
+2026-10-08,Filial BA,Ag. Descarga,Em operação,4
+2026-10-08,Filial BA,Carregado,Em operação,11
+2026-10-08,Filial BA,Em Viagem,Em operação,8
+2026-10-08,Filial BA,Fluxo CD,Em operação,9
+2026-10-08,Filial BA,Manobra,Em operação,3
+2026-10-08,Filial BA,Manutenção,Parado,4
+2026-10-08,Filial BA,Sinistro,Parado,1
+2026-10-08,Filial BA,Vazio,Disponível,11
+2026-10-08,Matriz SP,Carregado,Em operação,19
+2026-10-08,Matriz SP,Em Viagem,Em operação,28
+2026-10-08,Matriz SP,Inativo,Fora de operação,20
+2026-10-08,Matriz SP,MEC,Parado,1
+2026-10-08,Matriz SP,Manobra,Em operação,4
+2026-10-08,Matriz SP,Manutenção,Parado,6
+2026-10-08,Matriz SP,Vazio,Disponível,8
+2026-10-09,Filial BA,Ag. Descarga,Em operação,2
+2026-10-09,Filial BA,Carregado,Em operação,9
+2026-10-09,Filial BA,Em Viagem,Em operação,6
+2026-10-09,Filial BA,Fluxo CD,Em operação,10
+2026-10-09,Filial BA,Manobra,Em operação,2
+2026-10-09,Filial BA,Manutenção,Parado,4
+2026-10-09,Filial BA,Retorno,Em operação,4
+2026-10-09,Filial BA,Sinistro,Parado,1
+2026-10-09,Filial BA,Vazio,Disponível,13
+2026-10-09,Matriz SP,Carregado,Em operação,18
+2026-10-09,Matriz SP,Em Viagem,Em operação,19
+2026-10-09,Matriz SP,Inativo,Fora de operação,20
+2026-10-09,Matriz SP,Manobra,Em operação,3
+2026-10-09,Matriz SP,Manutenção,Parado,7
+2026-10-09,Matriz SP,Retorno,Em operação,1
+2026-10-09,Matriz SP,Vazio,Disponível,18
+2026-10-10,Filial BA,Ag. Descarga,Em operação,1
+2026-10-10,Filial BA,Carregado,Em operação,17
+2026-10-10,Filial BA,Em Viagem,Em operação,4
+2026-10-10,Filial BA,Fluxo CD,Em operação,9
+2026-10-10,Filial BA,Manobra,Em operação,1
+2026-10-10,Filial BA,Manutenção,Parado,5
+2026-10-10,Filial BA,Retorno,Em operação,2
+2026-10-10,Filial BA,Sinistro,Parado,1
+2026-10-10,Filial BA,Vazio,Disponível,11
+2026-10-10,Matriz SP,Carregado,Em operação,29
+2026-10-10,Matriz SP,Em Viagem,Em operação,23
+2026-10-10,Matriz SP,Inativo,Fora de operação,20
+2026-10-10,Matriz SP,Manobra,Em operação,3
+2026-10-10,Matriz SP,Manutenção,Parado,7
+2026-10-10,Matriz SP,Vazio,Disponível,4
+2026-10-13,Filial BA,Ag. Descarga,Em operação,3
+2026-10-13,Filial BA,Carregado,Em operação,12
+2026-10-13,Filial BA,Em Viagem,Em operação,5
+2026-10-13,Filial BA,Fluxo CD,Em operação,7
+2026-10-13,Filial BA,Manobra,Em operação,2
+2026-10-13,Filial BA,Manutenção,Parado,4
+2026-10-13,Filial BA,Sinistro,Parado,1
+2026-10-13,Filial BA,Vazio,Disponível,17
+2026-10-13,Matriz SP,Ag. Descarga,Em operação,2
+2026-10-13,Matriz SP,Carregado,Em operação,14
+2026-10-13,Matriz SP,Em Viagem,Em operação,34
+2026-10-13,Matriz SP,Inativo,Fora de operação,20
+2026-10-13,Matriz SP,Manobra,Em operação,3
+2026-10-13,Matriz SP,Manutenção,Parado,7
+2026-10-13,Matriz SP,Vazio,Disponível,5
+2026-10-14,Filial BA,Ag. Descarga,Em operação,5
+2026-10-14,Filial BA,Carregado,Em operação,13
+2026-10-14,Filial BA,Em Viagem,Em operação,6
+2026-10-14,Filial BA,Fluxo CD,Em operação,8
+2026-10-14,Filial BA,Manobra,Em operação,1
+2026-10-14,Filial BA,Manutenção,Parado,4
+2026-10-14,Filial BA,Retorno,Em operação,2
+2026-10-14,Filial BA,Sinistro,Parado,1
+2026-10-14,Filial BA,Vazio,Disponível,11
+2026-10-14,Matriz SP,Ag. Descarga,Em operação,1
+2026-10-14,Matriz SP,Carregado,Em operação,19
+2026-10-14,Matriz SP,Em Viagem,Em operação,19
+2026-10-14,Matriz SP,Inativo,Fora de operação,20
+2026-10-14,Matriz SP,MEC,Parado,1
+2026-10-14,Matriz SP,Manobra,Em operação,3
+2026-10-14,Matriz SP,Manutenção,Parado,9
+2026-10-14,Matriz SP,Retorno,Em operação,9
+2026-10-14,Matriz SP,Vazio,Disponível,5
+2026-10-15,Filial BA,Ag. Descarga,Em operação,7
+2026-10-15,Filial BA,Carregado,Em operação,11
+2026-10-15,Filial BA,Em Viagem,Em operação,4
+2026-10-15,Filial BA,Fluxo CD,Em operação,8
+2026-10-15,Filial BA,Manobra,Em operação,1
+2026-10-15,Filial BA,Manutenção,Parado,4
+2026-10-15,Filial BA,Sinistro,Parado,1
+2026-10-15,Filial BA,Vazio,Disponível,15
+2026-10-15,Matriz SP,Ag. Descarga,Em operação,1
+2026-10-15,Matriz SP,Carregado,Em operação,13
+2026-10-15,Matriz SP,Em Viagem,Em operação,28
+2026-10-15,Matriz SP,Inativo,Fora de operação,20
+2026-10-15,Matriz SP,MEC,Parado,1
+2026-10-15,Matriz SP,Manobra,Em operação,3
+2026-10-15,Matriz SP,Manutenção,Parado,12
+2026-10-15,Matriz SP,Retorno,Em operação,2
+2026-10-15,Matriz SP,Vazio,Disponível,6
+2026-10-16,Filial BA,Ag. Descarga,Em operação,7
+2026-10-16,Filial BA,Carregado,Em operação,9
+2026-10-16,Filial BA,Em Viagem,Em operação,7
+2026-10-16,Filial BA,Fluxo CD,Em operação,8
+2026-10-16,Filial BA,Manutenção,Parado,3
+2026-10-16,Filial BA,Retorno,Em operação,1
+2026-10-16,Filial BA,Sinistro,Parado,1
+2026-10-16,Filial BA,Vazio,Disponível,15
+2026-10-16,Matriz SP,Ag. Descarga,Em operação,11
+2026-10-16,Matriz SP,Carregado,Em operação,17
+2026-10-16,Matriz SP,Em Viagem,Em operação,13
+2026-10-16,Matriz SP,Inativo,Fora de operação,20
+2026-10-16,Matriz SP,MEC,Parado,2
+2026-10-16,Matriz SP,Manobra,Em operação,3
+2026-10-16,Matriz SP,Manutenção,Parado,13
+2026-10-16,Matriz SP,Retorno,Em operação,3
+2026-10-16,Matriz SP,Vazio,Disponível,4
+2026-10-17,Filial BA,Ag. Descarga,Em operação,6
+2026-10-17,Filial BA,Carregado,Em operação,8
+2026-10-17,Filial BA,Em Viagem,Em operação,5
+2026-10-17,Filial BA,Fluxo CD,Em operação,8
+2026-10-17,Filial BA,Manutenção,Parado,3
+2026-10-17,Filial BA,Retorno,Em operação,4
+2026-10-17,Filial BA,Sinistro,Parado,1
+2026-10-17,Filial BA,Vazio,Disponível,16
+2026-10-17,Matriz SP,Ag. Descarga,Em operação,5
+2026-10-17,Matriz SP,Carregado,Em operação,19
+2026-10-17,Matriz SP,Em Viagem,Em operação,10
+2026-10-17,Matriz SP,Inativo,Fora de operação,20
+2026-10-17,Matriz SP,MEC,Parado,2
+2026-10-17,Matriz SP,Manobra,Em operação,4
+2026-10-17,Matriz SP,Manutenção,Parado,11
+2026-10-17,Matriz SP,Retorno,Em operação,5
+2026-10-17,Matriz SP,Vazio,Disponível,10
+2026-10-20,Filial BA,Ag. Descarga,Em operação,4
+2026-10-20,Filial BA,Carregado,Em operação,4
+2026-10-20,Filial BA,Em Viagem,Em operação,3
+2026-10-20,Filial BA,Fluxo CD,Em operação,8
+2026-10-20,Filial BA,Manobra,Em operação,2
+2026-10-20,Filial BA,Manutenção,Parado,4
+2026-10-20,Filial BA,Retorno,Em operação,1
+2026-10-20,Filial BA,Sinistro,Parado,1
+2026-10-20,Filial BA,Vazio,Disponível,24
+2026-10-20,Matriz SP,Ag. Descarga,Em operação,7
+2026-10-20,Matriz SP,Carregado,Em operação,8
+2026-10-20,Matriz SP,Em Viagem,Em operação,15
+2026-10-20,Matriz SP,Inativo,Fora de operação,20
+2026-10-20,Matriz SP,Manobra,Em operação,3
+2026-10-20,Matriz SP,Manutenção,Parado,11
+2026-10-20,Matriz SP,Retorno,Em operação,3
+2026-10-20,Matriz SP,Vazio,Disponível,18
+2026-10-21,Filial BA,Ag. Descarga,Em operação,2
+2026-10-21,Filial BA,Carregado,Em operação,7
+2026-10-21,Filial BA,Em Viagem,Em operação,4
+2026-10-21,Filial BA,Fluxo CD,Em operação,8
+2026-10-21,Filial BA,MEC,Parado,1
+2026-10-21,Filial BA,Manobra,Em operação,2
+2026-10-21,Filial BA,Manutenção,Parado,6
+2026-10-21,Filial BA,Retorno,Em operação,3
+2026-10-21,Filial BA,Sinistro,Parado,1
+2026-10-21,Filial BA,Vazio,Disponível,17
+2026-10-21,Matriz SP,Ag. Descarga,Em operação,3
+2026-10-21,Matriz SP,Carregado,Em operação,14
+2026-10-21,Matriz SP,Em Viagem,Em operação,14
+2026-10-21,Matriz SP,Inativo,Fora de operação,20
+2026-10-21,Matriz SP,Manobra,Em operação,3
+2026-10-21,Matriz SP,Manutenção,Parado,11
+2026-10-21,Matriz SP,Retorno,Em operação,5
+2026-10-21,Matriz SP,Vazio,Disponível,15
+2026-10-22,Filial BA,Ag. Descarga,Em operação,2
+2026-10-22,Filial BA,Carregado,Em operação,8
+2026-10-22,Filial BA,Em Viagem,Em operação,8
+2026-10-22,Filial BA,Fluxo CD,Em operação,8
+2026-10-22,Filial BA,MEC,Parado,1
+2026-10-22,Filial BA,Manobra,Em operação,2
+2026-10-22,Filial BA,Manutenção,Parado,4
+2026-10-22,Filial BA,Retorno,Em operação,1
+2026-10-22,Filial BA,Sinistro,Parado,1
+2026-10-22,Filial BA,Vazio,Disponível,16
+2026-10-22,Matriz SP,Ag. Descarga,Em operação,7
+2026-10-22,Matriz SP,Carregado,Em operação,13
+2026-10-22,Matriz SP,Em Viagem,Em operação,12
+2026-10-22,Matriz SP,Inativo,Fora de operação,20
+2026-10-22,Matriz SP,MEC,Parado,2
+2026-10-22,Matriz SP,Manobra,Em operação,4
+2026-10-22,Matriz SP,Manutenção,Parado,12
+2026-10-22,Matriz SP,Retorno,Em operação,4
+2026-10-22,Matriz SP,Vazio,Disponível,11
+2026-10-23,Filial BA,Ag. Descarga,Em operação,2
+2026-10-23,Filial BA,Carregado,Em operação,9
+2026-10-23,Filial BA,Em Viagem,Em operação,7
+2026-10-23,Filial BA,Fluxo CD,Em operação,8
+2026-10-23,Filial BA,Manobra,Em operação,2
+2026-10-23,Filial BA,Manutenção,Parado,4
+2026-10-23,Filial BA,Retorno,Em operação,3
+2026-10-23,Filial BA,Sinistro,Parado,1
+2026-10-23,Filial BA,Vazio,Disponível,15
+2026-10-23,Matriz SP,Ag. Descarga,Em operação,4
+2026-10-23,Matriz SP,Carregado,Em operação,11
+2026-10-23,Matriz SP,Em Viagem,Em operação,15
+2026-10-23,Matriz SP,Inativo,Fora de operação,20
+2026-10-23,Matriz SP,MEC,Parado,1
+2026-10-23,Matriz SP,Manobra,Em operação,4
+2026-10-23,Matriz SP,Manutenção,Parado,12
+2026-10-23,Matriz SP,Retorno,Em operação,8
+2026-10-23,Matriz SP,Vazio,Disponível,10
+2026-10-24,Filial BA,Ag. Descarga,Em operação,1
+2026-10-24,Filial BA,Carregado,Em operação,11
+2026-10-24,Filial BA,Em Viagem,Em operação,1
+2026-10-24,Filial BA,Fluxo CD,Em operação,8
+2026-10-24,Filial BA,Manobra,Em operação,2
+2026-10-24,Filial BA,Manutenção,Parado,4
+2026-10-24,Filial BA,Retorno,Em operação,7
+2026-10-24,Filial BA,Sinistro,Parado,1
+2026-10-24,Filial BA,Vazio,Disponível,16
+2026-10-24,Matriz SP,Ag. Descarga,Em operação,6
+2026-10-24,Matriz SP,Carregado,Em operação,14
+2026-10-24,Matriz SP,Em Viagem,Em operação,7
+2026-10-24,Matriz SP,Inativo,Fora de operação,20
+2026-10-24,Matriz SP,MEC,Parado,1
+2026-10-24,Matriz SP,Manobra,Em operação,4
+2026-10-24,Matriz SP,Manutenção,Parado,11
+2026-10-24,Matriz SP,Retorno,Em operação,8
+2026-10-24,Matriz SP,Vazio,Disponível,14
+2026-10-27,Filial BA,Ag. Descarga,Em operação,6
+2026-10-27,Filial BA,Carregado,Em operação,8
+2026-10-27,Filial BA,Em Viagem,Em operação,5
+2026-10-27,Filial BA,Fluxo CD,Em operação,8
+2026-10-27,Filial BA,MEC,Parado,1
+2026-10-27,Filial BA,Manobra,Em operação,2
+2026-10-27,Filial BA,Manutenção,Parado,3
+2026-10-27,Filial BA,Sinistro,Parado,1
+2026-10-27,Filial BA,Vazio,Disponível,17
+2026-10-27,Matriz SP,Ag. Descarga,Em operação,4
+2026-10-27,Matriz SP,Carregado,Em operação,27
+2026-10-27,Matriz SP,Em Viagem,Em operação,2
+2026-10-27,Matriz SP,Inativo,Fora de operação,20
+2026-10-27,Matriz SP,MEC,Parado,1
+2026-10-27,Matriz SP,Manobra,Em operação,4
+2026-10-27,Matriz SP,Manutenção,Parado,9
+2026-10-27,Matriz SP,Retorno,Em operação,2
+2026-10-27,Matriz SP,Vazio,Disponível,16
+2026-10-28,Filial BA,Ag. Descarga,Em operação,5
+2026-10-28,Filial BA,Carregado,Em operação,11
+2026-10-28,Filial BA,Em Viagem,Em operação,6
+2026-10-28,Filial BA,Fluxo CD,Em operação,8
+2026-10-28,Filial BA,MEC,Parado,1
+2026-10-28,Filial BA,Manobra,Em operação,2
+2026-10-28,Filial BA,Manutenção,Parado,5
+2026-10-28,Filial BA,Retorno,Em operação,1
+2026-10-28,Filial BA,Sinistro,Parado,1
+2026-10-28,Filial BA,Vazio,Disponível,11
+2026-10-28,Matriz SP,Ag. Descarga,Em operação,4
+2026-10-28,Matriz SP,Carregado,Em operação,24
+2026-10-28,Matriz SP,Em Viagem,Em operação,8
+2026-10-28,Matriz SP,Inativo,Fora de operação,20
+2026-10-28,Matriz SP,MEC,Parado,1
+2026-10-28,Matriz SP,Manobra,Em operação,4
+2026-10-28,Matriz SP,Manutenção,Parado,8
+2026-10-28,Matriz SP,Retorno,Em operação,4
+2026-10-28,Matriz SP,Vazio,Disponível,12
+2026-10-29,Filial BA,Ag. Descarga,Em operação,3
+2026-10-29,Filial BA,Carregado,Em operação,14
+2026-10-29,Filial BA,Em Viagem,Em operação,5
+2026-10-29,Filial BA,Fluxo CD,Em operação,8
+2026-10-29,Filial BA,MEC,Parado,1
+2026-10-29,Filial BA,Manobra,Em operação,2
+2026-10-29,Filial BA,Manutenção,Parado,4
+2026-10-29,Filial BA,Retorno,Em operação,6
+2026-10-29,Filial BA,Sinistro,Parado,1
+2026-10-29,Filial BA,Vazio,Disponível,7
+2026-10-29,Matriz SP,Ag. Descarga,Em operação,7
+2026-10-29,Matriz SP,Carregado,Em operação,16
+2026-10-29,Matriz SP,Em Viagem,Em operação,15
+2026-10-29,Matriz SP,Inativo,Fora de operação,20
+2026-10-29,Matriz SP,MEC,Parado,1
+2026-10-29,Matriz SP,Manobra,Em operação,4
+2026-10-29,Matriz SP,Manutenção,Parado,8
+2026-10-29,Matriz SP,Retorno,Em operação,2
+2026-10-29,Matriz SP,Vazio,Disponível,12
+2026-10-30,Filial BA,Carregado,Em operação,14
+2026-10-30,Filial BA,Em Viagem,Em operação,6
+2026-10-30,Filial BA,Fluxo CD,Em operação,8
+2026-10-30,Filial BA,Manobra,Em operação,2
+2026-10-30,Filial BA,Manutenção,Parado,4
+2026-10-30,Filial BA,Retorno,Em operação,6
+2026-10-30,Filial BA,Sinistro,Parado,1
+2026-10-30,Filial BA,Vazio,Disponível,10
+2026-10-30,Matriz SP,Ag. Descarga,Em operação,10
+2026-10-30,Matriz SP,Carregado,Em operação,22
+2026-10-30,Matriz SP,Em Viagem,Em operação,7
+2026-10-30,Matriz SP,Inativo,Fora de operação,20
+2026-10-30,Matriz SP,MEC,Parado,2
+2026-10-30,Matriz SP,Manobra,Em operação,4
+2026-10-30,Matriz SP,Manutenção,Parado,6
+2026-10-30,Matriz SP,Vazio,Disponível,14
+2026-10-31,Filial BA,Ag. Descarga,Em operação,1
+2026-10-31,Filial BA,Carregado,Em operação,12
+2026-10-31,Filial BA,Em Viagem,Em operação,4
+2026-10-31,Filial BA,Fluxo CD,Em operação,8
+2026-10-31,Filial BA,Manobra,Em operação,2
+2026-10-31,Filial BA,Manutenção,Parado,3
+2026-10-31,Filial BA,Retorno,Em operação,6
+2026-10-31,Filial BA,Sinistro,Parado,1
+2026-10-31,Filial BA,Vazio,Disponível,14
+2026-10-31,Matriz SP,Ag. Descarga,Em operação,6
+2026-10-31,Matriz SP,Carregado,Em operação,26
+2026-10-31,Matriz SP,Em Viagem,Em operação,9
+2026-10-31,Matriz SP,Inativo,Fora de operação,20
+2026-10-31,Matriz SP,MEC,Parado,1
+2026-10-31,Matriz SP,Manobra,Em operação,5
+2026-10-31,Matriz SP,Manutenção,Parado,2
+2026-10-31,Matriz SP,Retorno,Em operação,2
+2026-10-31,Matriz SP,Vazio,Disponível,14
+2026-11-03,Filial BA,Ag. Descarga,Em operação,4
+2026-11-03,Filial BA,Carregado,Em operação,18
+2026-11-03,Filial BA,Em Viagem,Em operação,5
+2026-11-03,Filial BA,Fluxo CD,Em operação,13
+2026-11-03,Filial BA,Manobra,Em operação,2
+2026-11-03,Filial BA,Manutenção,Parado,2
+2026-11-03,Filial BA,Vazio,Disponível,8
+2026-11-03,Matriz SP,Ag. Descarga,Em operação,15
+2026-11-03,Matriz SP,Carregado,Em operação,14
+2026-11-03,Matriz SP,Em Viagem,Em operação,19
+2026-11-03,Matriz SP,Fluxo CD,Em operação,1
+2026-11-03,Matriz SP,Inativo,Fora de operação,21
+2026-11-03,Matriz SP,MEC,Parado,2
+2026-11-03,Matriz SP,Manobra,Em operação,2
+2026-11-03,Matriz SP,Manutenção,Parado,6
+2026-11-03,Matriz SP,Sem apontamento,Fora de operação,1
+2026-11-03,Matriz SP,Sinistro,Parado,1
+2026-11-03,Matriz SP,Vazio,Disponível,13
+2026-11-04,Filial BA,Ag. Descarga,Em operação,6
+2026-11-04,Filial BA,Carregado,Em operação,6
+2026-11-04,Filial BA,Em Viagem,Em operação,17
+2026-11-04,Filial BA,Fluxo CD,Em operação,13
+2026-11-04,Filial BA,Manutenção,Parado,2
+2026-11-04,Filial BA,Retorno,Em operação,2
+2026-11-04,Filial BA,Vazio,Disponível,6
+2026-11-04,Matriz SP,Ag. Descarga,Em operação,12
+2026-11-04,Matriz SP,Carregado,Em operação,12
+2026-11-04,Matriz SP,Em Viagem,Em operação,15
+2026-11-04,Matriz SP,Fluxo CD,Em operação,1
+2026-11-04,Matriz SP,Inativo,Fora de operação,21
+2026-11-04,Matriz SP,MEC,Parado,4
+2026-11-04,Matriz SP,Manobra,Em operação,2
+2026-11-04,Matriz SP,Manutenção,Parado,5
+2026-11-04,Matriz SP,Retorno,Em operação,7
+2026-11-04,Matriz SP,Sem apontamento,Fora de operação,1
+2026-11-04,Matriz SP,Sinistro,Parado,1
+2026-11-04,Matriz SP,Vazio,Disponível,14
+2026-11-05,Filial BA,Ag. Descarga,Em operação,13
+2026-11-05,Filial BA,Carregado,Em operação,5
+2026-11-05,Filial BA,Em Viagem,Em operação,11
+2026-11-05,Filial BA,Fluxo CD,Em operação,13
+2026-11-05,Filial BA,MEC,Parado,1
+2026-11-05,Filial BA,Manobra,Em operação,1
+2026-11-05,Filial BA,Manutenção,Parado,3
+2026-11-05,Filial BA,Retorno,Em operação,4
+2026-11-05,Filial BA,Vazio,Disponível,1
+2026-11-05,Matriz SP,Ag. Descarga,Em operação,7
+2026-11-05,Matriz SP,Carregado,Em operação,20
+2026-11-05,Matriz SP,Em Viagem,Em operação,12
+2026-11-05,Matriz SP,Fluxo CD,Em operação,1
+2026-11-05,Matriz SP,Inativo,Fora de operação,21
+2026-11-05,Matriz SP,MEC,Parado,1
+2026-11-05,Matriz SP,Manobra,Em operação,2
+2026-11-05,Matriz SP,Manutenção,Parado,6
+2026-11-05,Matriz SP,Retorno,Em operação,8
+2026-11-05,Matriz SP,Sem apontamento,Fora de operação,1
+2026-11-05,Matriz SP,Sinistro,Parado,1
+2026-11-05,Matriz SP,Vazio,Disponível,15
+2026-11-06,Filial BA,Ag. Descarga,Em operação,11
+2026-11-06,Filial BA,Carregado,Em operação,8
+2026-11-06,Filial BA,Em Viagem,Em operação,8
+2026-11-06,Filial BA,Fluxo CD,Em operação,13
+2026-11-06,Filial BA,MEC,Parado,2
+2026-11-06,Filial BA,Manutenção,Parado,1
+2026-11-06,Filial BA,Retorno,Em operação,6
+2026-11-06,Filial BA,Vazio,Disponível,3
+2026-11-06,Matriz SP,Ag. Descarga,Em operação,10
+2026-11-06,Matriz SP,Carregado,Em operação,26
+2026-11-06,Matriz SP,Em Viagem,Em operação,9
+2026-11-06,Matriz SP,Fluxo CD,Em operação,1
+2026-11-06,Matriz SP,Inativo,Fora de operação,21
+2026-11-06,Matriz SP,Manobra,Em operação,2
+2026-11-06,Matriz SP,Manutenção,Parado,7
+2026-11-06,Matriz SP,Retorno,Em operação,7
+2026-11-06,Matriz SP,Sem apontamento,Fora de operação,1
+2026-11-06,Matriz SP,Sinistro,Parado,1
+2026-11-06,Matriz SP,Vazio,Disponível,10
+2026-11-09,Filial BA,Ag. Descarga,Em operação,10
+2026-11-09,Filial BA,Carregado,Em operação,3
+2026-11-09,Filial BA,Em Viagem,Em operação,7
+2026-11-09,Filial BA,Fluxo CD,Em operação,13
+2026-11-09,Filial BA,MEC,Parado,2
+2026-11-09,Filial BA,Manutenção,Parado,1
+2026-11-09,Filial BA,Retorno,Em operação,3
+2026-11-09,Filial BA,Vazio,Disponível,13
+2026-11-09,Matriz SP,Ag. Descarga,Em operação,12
+2026-11-09,Matriz SP,Carregado,Em operação,18
+2026-11-09,Matriz SP,Em Viagem,Em operação,10
+2026-11-09,Matriz SP,Fluxo CD,Em operação,1
+2026-11-09,Matriz SP,Inativo,Fora de operação,21
+2026-11-09,Matriz SP,MEC,Parado,1
+2026-11-09,Matriz SP,Manobra,Em operação,2
+2026-11-09,Matriz SP,Manutenção,Parado,10
+2026-11-09,Matriz SP,Retorno,Em operação,6
+2026-11-09,Matriz SP,Sem apontamento,Fora de operação,1
+2026-11-09,Matriz SP,Sinistro,Parado,1
+2026-11-09,Matriz SP,Vazio,Disponível,12
+2026-11-10,Filial BA,Ag. Descarga,Em operação,8
+2026-11-10,Filial BA,Carregado,Em operação,8
+2026-11-10,Filial BA,Em Viagem,Em operação,7
+2026-11-10,Filial BA,Fluxo CD,Em operação,13
+2026-11-10,Filial BA,MEC,Parado,2
+2026-11-10,Filial BA,Manobra,Em operação,1
+2026-11-10,Filial BA,Manutenção,Parado,3
+2026-11-10,Filial BA,Retorno,Em operação,4
+2026-11-10,Filial BA,Vazio,Disponível,6
+2026-11-10,Matriz SP,Ag. Descarga,Em operação,3
+2026-11-10,Matriz SP,Carregado,Em operação,27
+2026-11-10,Matriz SP,Em Viagem,Em operação,12
+2026-11-10,Matriz SP,Fluxo CD,Em operação,1
+2026-11-10,Matriz SP,Inativo,Fora de operação,21
+2026-11-10,Matriz SP,MEC,Parado,1
+2026-11-10,Matriz SP,Manobra,Em operação,2
+2026-11-10,Matriz SP,Manutenção,Parado,8
+2026-11-10,Matriz SP,Retorno,Em operação,10
+2026-11-10,Matriz SP,Sem apontamento,Fora de operação,1
+2026-11-10,Matriz SP,Sinistro,Parado,1
+2026-11-10,Matriz SP,Vazio,Disponível,8
+2026-11-11,Filial BA,Ag. Descarga,Em operação,6
+2026-11-11,Filial BA,Carregado,Em operação,3
+2026-11-11,Filial BA,Em Viagem,Em operação,13
+2026-11-11,Filial BA,Fluxo CD,Em operação,13
+2026-11-11,Filial BA,MEC,Parado,2
+2026-11-11,Filial BA,Manobra,Em operação,1
+2026-11-11,Filial BA,Manutenção,Parado,3
+2026-11-11,Filial BA,Retorno,Em operação,3
+2026-11-11,Filial BA,Vazio,Disponível,8
+2026-11-11,Matriz SP,Ag. Descarga,Em operação,4
+2026-11-11,Matriz SP,Carregado,Em operação,20
+2026-11-11,Matriz SP,Em Viagem,Em operação,13
+2026-11-11,Matriz SP,Fluxo CD,Em operação,1
+2026-11-11,Matriz SP,Inativo,Fora de operação,21
+2026-11-11,Matriz SP,MEC,Parado,1
+2026-11-11,Matriz SP,Manobra,Em operação,2
+2026-11-11,Matriz SP,Manutenção,Parado,7
+2026-11-11,Matriz SP,Retorno,Em operação,10
+2026-11-11,Matriz SP,Sem apontamento,Fora de operação,1
+2026-11-11,Matriz SP,Sinistro,Parado,1
+2026-11-11,Matriz SP,Vazio,Disponível,14
+2026-11-12,Filial BA,Carregado,Em operação,6
+2026-11-12,Filial BA,Em Viagem,Em operação,14
+2026-11-12,Filial BA,Fluxo CD,Em operação,13
+2026-11-12,Filial BA,MEC,Parado,2
+2026-11-12,Filial BA,Manobra,Em operação,1
+2026-11-12,Filial BA,Manutenção,Parado,2
+2026-11-12,Filial BA,Retorno,Em operação,6
+2026-11-12,Filial BA,Vazio,Disponível,8
+2026-11-12,Matriz SP,Ag. Descarga,Em operação,8
+2026-11-12,Matriz SP,Carregado,Em operação,27
+2026-11-12,Matriz SP,Em Viagem,Em operação,8
+2026-11-12,Matriz SP,Fluxo CD,Em operação,1
+2026-11-12,Matriz SP,Inativo,Fora de operação,21
+2026-11-12,Matriz SP,MEC,Parado,1
+2026-11-12,Matriz SP,Manobra,Em operação,2
+2026-11-12,Matriz SP,Manutenção,Parado,8
+2026-11-12,Matriz SP,Retorno,Em operação,6
+2026-11-12,Matriz SP,Sem apontamento,Fora de operação,1
+2026-11-12,Matriz SP,Sinistro,Parado,1
+2026-11-12,Matriz SP,Vazio,Disponível,11
+2026-11-13,Filial BA,Carregado,Em operação,10
+2026-11-13,Filial BA,Em Viagem,Em operação,10
+2026-11-13,Filial BA,Fluxo CD,Em operação,13
+2026-11-13,Filial BA,MEC,Parado,3
+2026-11-13,Filial BA,Manobra,Em operação,2
+2026-11-13,Filial BA,Manutenção,Parado,2
+2026-11-13,Filial BA,Retorno,Em operação,6
+2026-11-13,Filial BA,Vazio,Disponível,6
+2026-11-13,Matriz SP,Ag. Descarga,Em operação,8
+2026-11-13,Matriz SP,Carregado,Em operação,35
+2026-11-13,Matriz SP,Em Viagem,Em operação,3
+2026-11-13,Matriz SP,Fluxo CD,Em operação,1
+2026-11-13,Matriz SP,Inativo,Fora de operação,21
+2026-11-13,Matriz SP,MEC,Parado,1
+2026-11-13,Matriz SP,Manobra,Em operação,2
+2026-11-13,Matriz SP,Manutenção,Parado,9
+2026-11-13,Matriz SP,Retorno,Em operação,6
+2026-11-13,Matriz SP,Sem apontamento,Fora de operação,2
+2026-11-13,Matriz SP,Sinistro,Parado,1
+2026-11-13,Matriz SP,Vazio,Disponível,6

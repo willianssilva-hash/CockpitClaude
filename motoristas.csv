@@ -1,0 +1,244 @@
+data,motorista,unidade,base,status,grupo,classe
+2026-11-03,EDIVAN DE SOUZA BORGES,Filial BA,CD Filial BA,Interno (F),Interno,Interno
+2026-11-04,EDIVAN DE SOUZA BORGES,Filial BA,CD Filial BA,Em Viagem (F),Em Viagem,Em rota
+2026-11-05,EDIVAN DE SOUZA BORGES,Filial BA,CD Filial BA,Aguard. Descarga Cliente (F),Ag. Descarga,Em rota
+2026-11-06,EDIVAN DE SOUZA BORGES,Filial BA,CD Filial BA,Aguard. Descarga Cliente (F),Ag. Descarga,Em rota
+2026-11-09,EDIVAN DE SOUZA BORGES,Filial BA,CD Filial BA,Aguard. Descarga Cliente (F),Ag. Descarga,Em rota
+2026-11-10,EDIVAN DE SOUZA BORGES,Filial BA,CD Filial BA,Aguard. Descarga Cliente (F),Ag. Descarga,Em rota
+2026-11-11,EDIVAN DE SOUZA BORGES,Filial BA,CD Filial BA,Em Viagem (F),Em Viagem,Em rota
+2026-11-12,EDIVAN DE SOUZA BORGES,Filial BA,CD Filial BA,Em Viagem (F),Em Viagem,Em rota
+2026-11-13,EDIVAN DE SOUZA BORGES,Filial BA,CD Filial BA,Interno (F),Interno,Interno
+2026-11-03,EDIVAN SANTOS DE OLIVEIRA,Filial BA,CD Filial BA,Carregado (F),Carregado,Em rota
+2026-11-04,EDIVAN SANTOS DE OLIVEIRA,Filial BA,CD Filial BA,Em Viagem (F),Em Viagem,Em rota
+2026-11-05,EDIVAN SANTOS DE OLIVEIRA,Filial BA,CD Filial BA,Em Viagem (F),Em Viagem,Em rota
+2026-11-06,EDIVAN SANTOS DE OLIVEIRA,Filial BA,CD Filial BA,Em Viagem (F),Em Viagem,Em rota
+2026-11-09,EDIVAN SANTOS DE OLIVEIRA,Filial BA,CD Filial BA,Carregado (F),Carregado,Em rota
+2026-11-10,EDIVAN SANTOS DE OLIVEIRA,Filial BA,CD Filial BA,Em Viagem (F),Em Viagem,Em rota
+2026-11-11,EDIVAN SANTOS DE OLIVEIRA,Filial BA,CD Filial BA,Em Viagem (F),Em Viagem,Em rota
+2026-11-12,EDIVAN SANTOS DE OLIVEIRA,Filial BA,CD Filial BA,Em Viagem (F),Em Viagem,Em rota
+2026-11-13,EDIVAN SANTOS DE OLIVEIRA,Filial BA,CD Filial BA,Carregado (F),Carregado,Em rota
+2026-11-03,FRANCISCO DE ASSIS CARNEIRO,Filial BA,CD Filial BA,Carregado (F),Carregado,Em rota
+2026-11-04,FRANCISCO DE ASSIS CARNEIRO,Filial BA,CD Filial BA,Aguard. Descarga Cliente (F),Ag. Descarga,Em rota
+2026-11-05,FRANCISCO DE ASSIS CARNEIRO,Filial BA,CD Filial BA,Em Viagem (F),Em Viagem,Em rota
+2026-11-06,FRANCISCO DE ASSIS CARNEIRO,Filial BA,CD Filial BA,Aguard. Descarga Cliente (F),Ag. Descarga,Em rota
+2026-11-09,FRANCISCO DE ASSIS CARNEIRO,Filial BA,CD Filial BA,Em Viagem (F),Em Viagem,Em rota
+2026-11-10,FRANCISCO DE ASSIS CARNEIRO,Filial BA,CD Filial BA,Em Viagem (F),Em Viagem,Em rota
+2026-11-11,FRANCISCO DE ASSIS CARNEIRO,Filial BA,CD Filial BA,Em Viagem (F),Em Viagem,Em rota
+2026-11-12,FRANCISCO DE ASSIS CARNEIRO,Filial BA,CD Filial BA,Em Viagem (F),Em Viagem,Em rota
+2026-11-13,FRANCISCO DE ASSIS CARNEIRO,Filial BA,CD Filial BA,Em Viagem (F),Em Viagem,Em rota
+2026-11-03,GERSON BARRETO DE OLIVEIRA,Filial BA,CD Filial BA,Aguard. Descarga Cliente (F),Ag. Descarga,Em rota
+2026-11-04,GERSON BARRETO DE OLIVEIRA,Filial BA,CD Filial BA,Interno (F),Interno,Interno
+2026-11-05,GERSON BARRETO DE OLIVEIRA,Filial BA,CD Filial BA,Aguard. Descarga Cliente (F),Ag. Descarga,Em rota
+2026-11-06,GERSON BARRETO DE OLIVEIRA,Filial BA,CD Filial BA,Interno (F),Interno,Interno
+2026-11-09,GERSON BARRETO DE OLIVEIRA,Filial BA,CD Filial BA,Aguard. Descarga Cliente (F),Ag. Descarga,Em rota
+2026-11-10,GERSON BARRETO DE OLIVEIRA,Filial BA,CD Filial BA,Interno (F),Interno,Interno
+2026-11-11,GERSON BARRETO DE OLIVEIRA,Filial BA,CD Filial BA,Interno (F),Interno,Interno
+2026-11-12,GERSON BARRETO DE OLIVEIRA,Filial BA,CD Filial BA,Interno (F),Interno,Interno
+2026-11-13,GERSON BARRETO DE OLIVEIRA,Filial BA,CD Filial BA,Interno (F),Interno,Interno
+2026-11-03,JUARI OLIVEIRA FREITAS,Filial BA,CD Filial BA,Interno (F),Interno,Interno
+2026-11-04,JUARI OLIVEIRA FREITAS,Filial BA,CD Filial BA,Aguard. Descarga Cliente (F),Ag. Descarga,Em rota
+2026-11-05,JUARI OLIVEIRA FREITAS,Filial BA,CD Filial BA,Em Viagem (F),Em Viagem,Em rota
+2026-11-06,JUARI OLIVEIRA FREITAS,Filial BA,CD Filial BA,Aguard. Descarga Cliente (F),Ag. Descarga,Em rota
+2026-11-09,JUARI OLIVEIRA FREITAS,Filial BA,CD Filial BA,Aguard. Descarga Cliente (F),Ag. Descarga,Em rota
+2026-11-10,JUARI OLIVEIRA FREITAS,Filial BA,CD Filial BA,Aguard. Descarga Cliente (F),Ag. Descarga,Em rota
+2026-11-11,JUARI OLIVEIRA FREITAS,Filial BA,CD Filial BA,Aguard. Descarga Cliente (F),Ag. Descarga,Em rota
+2026-11-12,JUARI OLIVEIRA FREITAS,Filial BA,CD Filial BA,Em Viagem (F),Em Viagem,Em rota
+2026-11-13,JUARI OLIVEIRA FREITAS,Filial BA,CD Filial BA,Interno (F),Interno,Interno
+2026-11-03,MARCOS HENRIQUE GOMES SILVA,Filial BA,CD Filial BA,Disponível (F),Disponível,Disponível
+2026-11-04,MARCOS HENRIQUE GOMES SILVA,Filial BA,CD Filial BA,Em Viagem (F),Em Viagem,Em rota
+2026-11-05,MARCOS HENRIQUE GOMES SILVA,Filial BA,CD Filial BA,Em Viagem (F),Em Viagem,Em rota
+2026-11-06,MARCOS HENRIQUE GOMES SILVA,Filial BA,CD Filial BA,Carregado (F),Carregado,Em rota
+2026-11-09,MARCOS HENRIQUE GOMES SILVA,Filial BA,CD Filial BA,Em Viagem (F),Em Viagem,Em rota
+2026-11-10,MARCOS HENRIQUE GOMES SILVA,Filial BA,CD Filial BA,Em Viagem (F),Em Viagem,Em rota
+2026-11-11,MARCOS HENRIQUE GOMES SILVA,Filial BA,CD Filial BA,Em Viagem (F),Em Viagem,Em rota
+2026-11-12,MARCOS HENRIQUE GOMES SILVA,Filial BA,CD Filial BA,Em Viagem (F),Em Viagem,Em rota
+2026-11-13,MARCOS HENRIQUE GOMES SILVA,Filial BA,CD Filial BA,Em Viagem (F),Em Viagem,Em rota
+2026-11-03,MAYRON DA SILVA CORDEIRO,Filial BA,CD Filial BA,Carregado (F),Carregado,Em rota
+2026-11-04,MAYRON DA SILVA CORDEIRO,Filial BA,CD Filial BA,Em Viagem (F),Em Viagem,Em rota
+2026-11-05,MAYRON DA SILVA CORDEIRO,Filial BA,CD Filial BA,Em Viagem (F),Em Viagem,Em rota
+2026-11-06,MAYRON DA SILVA CORDEIRO,Filial BA,CD Filial BA,Em Viagem (F),Em Viagem,Em rota
+2026-11-09,MAYRON DA SILVA CORDEIRO,Filial BA,CD Filial BA,Disponível (F),Disponível,Disponível
+2026-11-10,MAYRON DA SILVA CORDEIRO,Filial BA,CD Filial BA,Em Viagem (F),Em Viagem,Em rota
+2026-11-11,MAYRON DA SILVA CORDEIRO,Filial BA,CD Filial BA,Em Viagem (F),Em Viagem,Em rota
+2026-11-12,MAYRON DA SILVA CORDEIRO,Filial BA,CD Filial BA,Em Viagem (F),Em Viagem,Em rota
+2026-11-13,MAYRON DA SILVA CORDEIRO,Filial BA,CD Filial BA,Em Viagem (F),Em Viagem,Em rota
+2026-11-03,ROMILSON DE SOUSA AMORIM,Filial BA,CD Filial BA,Carregado (F),Carregado,Em rota
+2026-11-04,ROMILSON DE SOUSA AMORIM,Filial BA,CD Filial BA,Em Viagem (F),Em Viagem,Em rota
+2026-11-05,ROMILSON DE SOUSA AMORIM,Filial BA,CD Filial BA,Em Viagem (F),Em Viagem,Em rota
+2026-11-06,ROMILSON DE SOUSA AMORIM,Filial BA,CD Filial BA,Em Viagem (F),Em Viagem,Em rota
+2026-11-09,ROMILSON DE SOUSA AMORIM,Filial BA,CD Filial BA,Disponível (F),Disponível,Disponível
+2026-11-10,ROMILSON DE SOUSA AMORIM,Filial BA,CD Filial BA,Carregado (F),Carregado,Em rota
+2026-11-11,ROMILSON DE SOUSA AMORIM,Filial BA,CD Filial BA,Em Viagem (F),Em Viagem,Em rota
+2026-11-12,ROMILSON DE SOUSA AMORIM,Filial BA,CD Filial BA,Aguard. Descarga Cliente (F),Ag. Descarga,Em rota
+2026-11-13,ROMILSON DE SOUSA AMORIM,Filial BA,CD Filial BA,Carregado (F),Carregado,Em rota
+2026-11-03,UBIRAJARA SOUZA DA SILVA,Filial BA,CD Filial BA,Disponível (F),Disponível,Disponível
+2026-11-04,UBIRAJARA SOUZA DA SILVA,Filial BA,CD Filial BA,Carregado (F),Carregado,Em rota
+2026-11-05,UBIRAJARA SOUZA DA SILVA,Filial BA,CD Filial BA,Em Viagem (F),Em Viagem,Em rota
+2026-11-06,UBIRAJARA SOUZA DA SILVA,Filial BA,CD Filial BA,Em Viagem (F),Em Viagem,Em rota
+2026-11-09,UBIRAJARA SOUZA DA SILVA,Filial BA,CD Filial BA,Disponível (F),Disponível,Disponível
+2026-11-10,UBIRAJARA SOUZA DA SILVA,Filial BA,CD Filial BA,Carregado (F),Carregado,Em rota
+2026-11-11,UBIRAJARA SOUZA DA SILVA,Filial BA,CD Filial BA,Em Viagem (F),Em Viagem,Em rota
+2026-11-12,UBIRAJARA SOUZA DA SILVA,Filial BA,CD Filial BA,Em Viagem (F),Em Viagem,Em rota
+2026-11-13,UBIRAJARA SOUZA DA SILVA,Filial BA,CD Filial BA,Em Viagem (F),Em Viagem,Em rota
+2026-11-03,WANDERSON MARCOS DOS SANTOS OLIVEIRA,Filial BA,CD Filial BA,Carregado (F),Carregado,Em rota
+2026-11-04,WANDERSON MARCOS DOS SANTOS OLIVEIRA,Filial BA,CD Filial BA,Em Viagem (F),Em Viagem,Em rota
+2026-11-05,WANDERSON MARCOS DOS SANTOS OLIVEIRA,Filial BA,CD Filial BA,Em Viagem (F),Em Viagem,Em rota
+2026-11-06,WANDERSON MARCOS DOS SANTOS OLIVEIRA,Filial BA,CD Filial BA,Em Viagem (F),Em Viagem,Em rota
+2026-11-09,WANDERSON MARCOS DOS SANTOS OLIVEIRA,Filial BA,CD Filial BA,Em Viagem (F),Em Viagem,Em rota
+2026-11-10,WANDERSON MARCOS DOS SANTOS OLIVEIRA,Filial BA,CD Filial BA,Disponível (F),Disponível,Disponível
+2026-11-11,WANDERSON MARCOS DOS SANTOS OLIVEIRA,Filial BA,CD Filial BA,Em Viagem (F),Em Viagem,Em rota
+2026-11-12,WANDERSON MARCOS DOS SANTOS OLIVEIRA,Filial BA,CD Filial BA,Em Viagem (F),Em Viagem,Em rota
+2026-11-13,WANDERSON MARCOS DOS SANTOS OLIVEIRA,Filial BA,CD Filial BA,Em Viagem (F),Em Viagem,Em rota
+2026-11-03,WELLINGTON RICARDO MOREIRA PESSOA,Filial BA,CD Filial BA,Disponível (F),Disponível,Disponível
+2026-11-04,WELLINGTON RICARDO MOREIRA PESSOA,Filial BA,CD Filial BA,Carregado (F),Carregado,Em rota
+2026-11-05,WELLINGTON RICARDO MOREIRA PESSOA,Filial BA,CD Filial BA,Em Viagem (F),Em Viagem,Em rota
+2026-11-06,WELLINGTON RICARDO MOREIRA PESSOA,Filial BA,CD Filial BA,Em Viagem (F),Em Viagem,Em rota
+2026-11-09,WELLINGTON RICARDO MOREIRA PESSOA,Filial BA,CD Filial BA,Em Viagem (F),Em Viagem,Em rota
+2026-11-10,WELLINGTON RICARDO MOREIRA PESSOA,Filial BA,CD Filial BA,Disponível (F),Disponível,Disponível
+2026-11-11,WELLINGTON RICARDO MOREIRA PESSOA,Filial BA,CD Filial BA,Carregado (F),Carregado,Em rota
+2026-11-12,WELLINGTON RICARDO MOREIRA PESSOA,Filial BA,CD Filial BA,Em Viagem (F),Em Viagem,Em rota
+2026-11-13,WELLINGTON RICARDO MOREIRA PESSOA,Filial BA,CD Filial BA,Em Viagem (F),Em Viagem,Em rota
+2026-11-03,GEISILANE MOREIRA DE JESUS,Filial BA,Fábrica Filial BA,Interno (F),Interno,Interno
+2026-11-04,GEISILANE MOREIRA DE JESUS,Filial BA,Fábrica Filial BA,Interno (F),Interno,Interno
+2026-11-05,GEISILANE MOREIRA DE JESUS,Filial BA,Fábrica Filial BA,Interno (F),Interno,Interno
+2026-11-06,GEISILANE MOREIRA DE JESUS,Filial BA,Fábrica Filial BA,Interno (F),Interno,Interno
+2026-11-09,GEISILANE MOREIRA DE JESUS,Filial BA,Fábrica Filial BA,Interno (F),Interno,Interno
+2026-11-10,GEISILANE MOREIRA DE JESUS,Filial BA,Fábrica Filial BA,Interno (F),Interno,Interno
+2026-11-11,GEISILANE MOREIRA DE JESUS,Filial BA,Fábrica Filial BA,Interno (F),Interno,Interno
+2026-11-12,GEISILANE MOREIRA DE JESUS,Filial BA,Fábrica Filial BA,Interno (F),Interno,Interno
+2026-11-13,GEISILANE MOREIRA DE JESUS,Filial BA,Fábrica Filial BA,Interno (F),Interno,Interno
+2026-11-03,JACIEL ALMEIDA DE JESUS,Filial BA,Fábrica Filial BA,Interno (F),Interno,Interno
+2026-11-04,JACIEL ALMEIDA DE JESUS,Filial BA,Fábrica Filial BA,Interno (F),Interno,Interno
+2026-11-05,JACIEL ALMEIDA DE JESUS,Filial BA,Fábrica Filial BA,Interno (F),Interno,Interno
+2026-11-06,JACIEL ALMEIDA DE JESUS,Filial BA,Fábrica Filial BA,Interno (F),Interno,Interno
+2026-11-09,JACIEL ALMEIDA DE JESUS,Filial BA,Fábrica Filial BA,Interno (F),Interno,Interno
+2026-11-10,JACIEL ALMEIDA DE JESUS,Filial BA,Fábrica Filial BA,Interno (F),Interno,Interno
+2026-11-11,JACIEL ALMEIDA DE JESUS,Filial BA,Fábrica Filial BA,Interno (F),Interno,Interno
+2026-11-12,JACIEL ALMEIDA DE JESUS,Filial BA,Fábrica Filial BA,Interno (F),Interno,Interno
+2026-11-13,JACIEL ALMEIDA DE JESUS,Filial BA,Fábrica Filial BA,Interno (F),Interno,Interno
+2026-11-03,ROGERIO DOS SANTOS VIEIRA,Filial BA,Fábrica Filial BA,Interno (F),Interno,Interno
+2026-11-04,ROGERIO DOS SANTOS VIEIRA,Filial BA,Fábrica Filial BA,Interno (F),Interno,Interno
+2026-11-05,ROGERIO DOS SANTOS VIEIRA,Filial BA,Fábrica Filial BA,Interno (F),Interno,Interno
+2026-11-06,ROGERIO DOS SANTOS VIEIRA,Filial BA,Fábrica Filial BA,Interno (F),Interno,Interno
+2026-11-09,ROGERIO DOS SANTOS VIEIRA,Filial BA,Fábrica Filial BA,Interno (F),Interno,Interno
+2026-11-10,ROGERIO DOS SANTOS VIEIRA,Filial BA,Fábrica Filial BA,Interno (F),Interno,Interno
+2026-11-11,ROGERIO DOS SANTOS VIEIRA,Filial BA,Fábrica Filial BA,Interno (F),Interno,Interno
+2026-11-12,ROGERIO DOS SANTOS VIEIRA,Filial BA,Fábrica Filial BA,Interno (F),Interno,Interno
+2026-11-13,ROGERIO DOS SANTOS VIEIRA,Filial BA,Fábrica Filial BA,Interno (F),Interno,Interno
+2026-11-03,ELENILSON PEREIRA FERREIRA,Filial BA,Fábrica Filial BA,Interno (F),Interno,Interno
+2026-11-04,ELENILSON PEREIRA FERREIRA,Filial BA,Fábrica Filial BA,Interno (F),Interno,Interno
+2026-11-05,ELENILSON PEREIRA FERREIRA,Filial BA,Fábrica Filial BA,Interno (F),Interno,Interno
+2026-11-06,ELENILSON PEREIRA FERREIRA,Filial BA,Fábrica Filial BA,Interno (F),Interno,Interno
+2026-11-09,ELENILSON PEREIRA FERREIRA,Filial BA,Fábrica Filial BA,Interno (F),Interno,Interno
+2026-11-10,ELENILSON PEREIRA FERREIRA,Filial BA,Fábrica Filial BA,Interno (F),Interno,Interno
+2026-11-11,ELENILSON PEREIRA FERREIRA,Filial BA,Fábrica Filial BA,Interno (F),Interno,Interno
+2026-11-12,ELENILSON PEREIRA FERREIRA,Filial BA,Fábrica Filial BA,Interno (F),Interno,Interno
+2026-11-13,ELENILSON PEREIRA FERREIRA,Filial BA,Fábrica Filial BA,Interno (F),Interno,Interno
+2026-11-03,CESAR HENRIQUE SILVA RAMOS,Filial BA,Fábrica Filial BA,Interno (F),Interno,Interno
+2026-11-04,CESAR HENRIQUE SILVA RAMOS,Filial BA,Fábrica Filial BA,Interno (F),Interno,Interno
+2026-11-05,CESAR HENRIQUE SILVA RAMOS,Filial BA,Fábrica Filial BA,Interno (F),Interno,Interno
+2026-11-06,CESAR HENRIQUE SILVA RAMOS,Filial BA,Fábrica Filial BA,Interno (F),Interno,Interno
+2026-11-09,CESAR HENRIQUE SILVA RAMOS,Filial BA,Fábrica Filial BA,Interno (F),Interno,Interno
+2026-11-10,CESAR HENRIQUE SILVA RAMOS,Filial BA,Fábrica Filial BA,Interno (F),Interno,Interno
+2026-11-11,CESAR HENRIQUE SILVA RAMOS,Filial BA,Fábrica Filial BA,Interno (F),Interno,Interno
+2026-11-12,CESAR HENRIQUE SILVA RAMOS,Filial BA,Fábrica Filial BA,Interno (F),Interno,Interno
+2026-11-13,CESAR HENRIQUE SILVA RAMOS,Filial BA,Fábrica Filial BA,Interno (F),Interno,Interno
+2026-11-03,JARDEL SANTANA DE LIMA,Filial BA,Fábrica Filial BA,Interno (F),Interno,Interno
+2026-11-04,JARDEL SANTANA DE LIMA,Filial BA,Fábrica Filial BA,Interno (F),Interno,Interno
+2026-11-05,JARDEL SANTANA DE LIMA,Filial BA,Fábrica Filial BA,Interno (F),Interno,Interno
+2026-11-06,JARDEL SANTANA DE LIMA,Filial BA,Fábrica Filial BA,Interno (F),Interno,Interno
+2026-11-09,JARDEL SANTANA DE LIMA,Filial BA,Fábrica Filial BA,Interno (F),Interno,Interno
+2026-11-10,JARDEL SANTANA DE LIMA,Filial BA,Fábrica Filial BA,Interno (F),Interno,Interno
+2026-11-11,JARDEL SANTANA DE LIMA,Filial BA,Fábrica Filial BA,Interno (F),Interno,Interno
+2026-11-12,JARDEL SANTANA DE LIMA,Filial BA,Fábrica Filial BA,Interno (F),Interno,Interno
+2026-11-13,JARDEL SANTANA DE LIMA,Filial BA,Fábrica Filial BA,Interno (F),Interno,Interno
+2026-11-03,MARCOS SOUZA DE PAULA,Filial BA,Fábrica Filial BA,Interno (F),Interno,Interno
+2026-11-04,MARCOS SOUZA DE PAULA,Filial BA,Fábrica Filial BA,Interno (F),Interno,Interno
+2026-11-05,MARCOS SOUZA DE PAULA,Filial BA,Fábrica Filial BA,Interno (F),Interno,Interno
+2026-11-06,MARCOS SOUZA DE PAULA,Filial BA,Fábrica Filial BA,Interno (F),Interno,Interno
+2026-11-09,MARCOS SOUZA DE PAULA,Filial BA,Fábrica Filial BA,Interno (F),Interno,Interno
+2026-11-10,MARCOS SOUZA DE PAULA,Filial BA,Fábrica Filial BA,Interno (F),Interno,Interno
+2026-11-11,MARCOS SOUZA DE PAULA,Filial BA,Fábrica Filial BA,Interno (F),Interno,Interno
+2026-11-12,MARCOS SOUZA DE PAULA,Filial BA,Fábrica Filial BA,Interno (F),Interno,Interno
+2026-11-13,MARCOS SOUZA DE PAULA,Filial BA,Fábrica Filial BA,Interno (F),Interno,Interno
+2026-11-03,ROBERVAL IDELBRANDO REIS,Filial BA,Fábrica Filial BA,Interno (F),Interno,Interno
+2026-11-04,ROBERVAL IDELBRANDO REIS,Filial BA,Fábrica Filial BA,Interno (F),Interno,Interno
+2026-11-05,ROBERVAL IDELBRANDO REIS,Filial BA,Fábrica Filial BA,Interno (F),Interno,Interno
+2026-11-06,ROBERVAL IDELBRANDO REIS,Filial BA,Fábrica Filial BA,Interno (F),Interno,Interno
+2026-11-09,ROBERVAL IDELBRANDO REIS,Filial BA,Fábrica Filial BA,Interno (F),Interno,Interno
+2026-11-10,ROBERVAL IDELBRANDO REIS,Filial BA,Fábrica Filial BA,Interno (F),Interno,Interno
+2026-11-11,ROBERVAL IDELBRANDO REIS,Filial BA,Fábrica Filial BA,Interno (F),Interno,Interno
+2026-11-12,ROBERVAL IDELBRANDO REIS,Filial BA,Fábrica Filial BA,Interno (F),Interno,Interno
+2026-11-13,ROBERVAL IDELBRANDO REIS,Filial BA,Fábrica Filial BA,Interno (F),Interno,Interno
+2026-11-03,CARLOS ROBERTO PEREIRA DOS SANTOS,Matriz SP,Matriz SP,Em Viagem (M),Em Viagem,Em rota
+2026-11-04,CARLOS ROBERTO PEREIRA DOS SANTOS,Matriz SP,Matriz SP,Em Viagem (M),Em Viagem,Em rota
+2026-11-05,CARLOS ROBERTO PEREIRA DOS SANTOS,Matriz SP,Matriz SP,Folga Compensatória (M),Folga,Ausente
+2026-11-06,CARLOS ROBERTO PEREIRA DOS SANTOS,Matriz SP,Matriz SP,Folga Compensatória (M),Folga,Ausente
+2026-11-09,CARLOS ROBERTO PEREIRA DOS SANTOS,Matriz SP,Matriz SP,Em Viagem (M),Em Viagem,Em rota
+2026-11-10,CARLOS ROBERTO PEREIRA DOS SANTOS,Matriz SP,Matriz SP,Em Viagem (M),Em Viagem,Em rota
+2026-11-11,CARLOS ROBERTO PEREIRA DOS SANTOS,Matriz SP,Matriz SP,Em Viagem (M),Em Viagem,Em rota
+2026-11-12,CARLOS ROBERTO PEREIRA DOS SANTOS,Matriz SP,Matriz SP,Disponível (M),Disponível,Disponível
+2026-11-13,CARLOS ROBERTO PEREIRA DOS SANTOS,Matriz SP,Matriz SP,Disponível (M),Disponível,Disponível
+2026-11-03,DIRCEU AMBROSIO,Matriz SP,Matriz SP,Em Viagem (M),Em Viagem,Em rota
+2026-11-04,DIRCEU AMBROSIO,Matriz SP,Matriz SP,Em Viagem (M),Em Viagem,Em rota
+2026-11-05,DIRCEU AMBROSIO,Matriz SP,Matriz SP,Em Viagem (M),Em Viagem,Em rota
+2026-11-06,DIRCEU AMBROSIO,Matriz SP,Matriz SP,Em Viagem (M),Em Viagem,Em rota
+2026-11-09,DIRCEU AMBROSIO,Matriz SP,Matriz SP,Em Viagem (M),Em Viagem,Em rota
+2026-11-10,DIRCEU AMBROSIO,Matriz SP,Matriz SP,Em Viagem (M),Em Viagem,Em rota
+2026-11-11,DIRCEU AMBROSIO,Matriz SP,Matriz SP,Em Viagem (M),Em Viagem,Em rota
+2026-11-12,DIRCEU AMBROSIO,Matriz SP,Matriz SP,Em Viagem (M),Em Viagem,Em rota
+2026-11-13,DIRCEU AMBROSIO,Matriz SP,Matriz SP,Disponível (M),Disponível,Disponível
+2026-11-03,EDER WILSON SOUSA SILVA,Matriz SP,Matriz SP,Em Viagem (M),Em Viagem,Em rota
+2026-11-04,EDER WILSON SOUSA SILVA,Matriz SP,Matriz SP,Carregado (M),Carregado,Em rota
+2026-11-05,EDER WILSON SOUSA SILVA,Matriz SP,Matriz SP,Em Viagem (M),Em Viagem,Em rota
+2026-11-06,EDER WILSON SOUSA SILVA,Matriz SP,Matriz SP,Em Viagem (M),Em Viagem,Em rota
+2026-11-09,EDER WILSON SOUSA SILVA,Matriz SP,Matriz SP,Em Viagem (M),Em Viagem,Em rota
+2026-11-10,EDER WILSON SOUSA SILVA,Matriz SP,Matriz SP,Em Viagem (M),Em Viagem,Em rota
+2026-11-11,EDER WILSON SOUSA SILVA,Matriz SP,Matriz SP,Em Viagem (M),Em Viagem,Em rota
+2026-11-12,EDER WILSON SOUSA SILVA,Matriz SP,Matriz SP,Em Viagem (M),Em Viagem,Em rota
+2026-11-13,EDER WILSON SOUSA SILVA,Matriz SP,Matriz SP,Folga Compensatória (M),Folga,Ausente
+2026-11-03,ERASMO SILVA CARNEIRO,Matriz SP,Matriz SP,Disponível (M),Disponível,Disponível
+2026-11-04,ERASMO SILVA CARNEIRO,Matriz SP,Matriz SP,Em Viagem (M),Em Viagem,Em rota
+2026-11-05,ERASMO SILVA CARNEIRO,Matriz SP,Matriz SP,Em Viagem (M),Em Viagem,Em rota
+2026-11-06,ERASMO SILVA CARNEIRO,Matriz SP,Matriz SP,Em Viagem (M),Em Viagem,Em rota
+2026-11-09,ERASMO SILVA CARNEIRO,Matriz SP,Matriz SP,Em Viagem (M),Em Viagem,Em rota
+2026-11-10,ERASMO SILVA CARNEIRO,Matriz SP,Matriz SP,Aguard. Descarga Cliente (F),Ag. Descarga,Em rota
+2026-11-11,ERASMO SILVA CARNEIRO,Matriz SP,Matriz SP,Em Viagem (M),Em Viagem,Em rota
+2026-11-12,ERASMO SILVA CARNEIRO,Matriz SP,Matriz SP,Disponível (M),Disponível,Disponível
+2026-11-13,ERASMO SILVA CARNEIRO,Matriz SP,Matriz SP,Disponível (M),Disponível,Disponível
+2026-11-03,NIVALDO BRAGA MACHADO,Matriz SP,Matriz SP,Interno (M),Interno,Interno
+2026-11-04,NIVALDO BRAGA MACHADO,Matriz SP,Matriz SP,Interno (M),Interno,Interno
+2026-11-05,NIVALDO BRAGA MACHADO,Matriz SP,Matriz SP,Interno (M),Interno,Interno
+2026-11-06,NIVALDO BRAGA MACHADO,Matriz SP,Matriz SP,Interno (M),Interno,Interno
+2026-11-09,NIVALDO BRAGA MACHADO,Matriz SP,Matriz SP,Interno (M),Interno,Interno
+2026-11-10,NIVALDO BRAGA MACHADO,Matriz SP,Matriz SP,Interno (M),Interno,Interno
+2026-11-11,NIVALDO BRAGA MACHADO,Matriz SP,Matriz SP,Interno (M),Interno,Interno
+2026-11-12,NIVALDO BRAGA MACHADO,Matriz SP,Matriz SP,Falta,Falta,Ausente
+2026-11-13,NIVALDO BRAGA MACHADO,Matriz SP,Matriz SP,Interno (M),Interno,Interno
+2026-11-03,ROBERTO BORGES DOS SANTOS,Matriz SP,Matriz SP,Férias (M),Férias,Ausente
+2026-11-04,ROBERTO BORGES DOS SANTOS,Matriz SP,Matriz SP,Férias (M),Férias,Ausente
+2026-11-05,ROBERTO BORGES DOS SANTOS,Matriz SP,Matriz SP,Férias (M),Férias,Ausente
+2026-11-06,ROBERTO BORGES DOS SANTOS,Matriz SP,Matriz SP,Férias (M),Férias,Ausente
+2026-11-09,ROBERTO BORGES DOS SANTOS,Matriz SP,Matriz SP,Férias (M),Férias,Ausente
+2026-11-10,ROBERTO BORGES DOS SANTOS,Matriz SP,Matriz SP,Férias (M),Férias,Ausente
+2026-11-11,ROBERTO BORGES DOS SANTOS,Matriz SP,Matriz SP,Férias (M),Férias,Ausente
+2026-11-12,ROBERTO BORGES DOS SANTOS,Matriz SP,Matriz SP,Férias (M),Férias,Ausente
+2026-11-13,ROBERTO BORGES DOS SANTOS,Matriz SP,Matriz SP,Férias (M),Férias,Ausente
+2026-11-03,DOUGLAS RODRIGUES COUTINHO,Matriz SP,Matriz SP,Em Viagem (M),Em Viagem,Em rota
+2026-11-04,DOUGLAS RODRIGUES COUTINHO,Matriz SP,Matriz SP,Em Viagem (M),Em Viagem,Em rota
+2026-11-05,DOUGLAS RODRIGUES COUTINHO,Matriz SP,Matriz SP,Em Viagem (M),Em Viagem,Em rota
+2026-11-06,DOUGLAS RODRIGUES COUTINHO,Matriz SP,Matriz SP,Em Viagem (M),Em Viagem,Em rota
+2026-11-09,DOUGLAS RODRIGUES COUTINHO,Matriz SP,Matriz SP,Disponível (M),Disponível,Disponível
+2026-11-10,DOUGLAS RODRIGUES COUTINHO,Matriz SP,Matriz SP,Disponível (M),Disponível,Disponível
+2026-11-11,DOUGLAS RODRIGUES COUTINHO,Matriz SP,Matriz SP,Disponível (M),Disponível,Disponível
+2026-11-12,DOUGLAS RODRIGUES COUTINHO,Matriz SP,Matriz SP,Disponível (M),Disponível,Disponível
+2026-11-13,DOUGLAS RODRIGUES COUTINHO,Matriz SP,Matriz SP,Disponível (M),Disponível,Disponível
+2026-11-03,FRANCIS FABIANO MORAES DE OLIVEIRA,Matriz SP,Matriz SP,Em Viagem (M),Em Viagem,Em rota
+2026-11-04,FRANCIS FABIANO MORAES DE OLIVEIRA,Matriz SP,Matriz SP,Em Viagem (M),Em Viagem,Em rota
+2026-11-05,FRANCIS FABIANO MORAES DE OLIVEIRA,Matriz SP,Matriz SP,Em Viagem (M),Em Viagem,Em rota
+2026-11-06,FRANCIS FABIANO MORAES DE OLIVEIRA,Matriz SP,Matriz SP,Em Viagem (M),Em Viagem,Em rota
+2026-11-09,FRANCIS FABIANO MORAES DE OLIVEIRA,Matriz SP,Matriz SP,Em Viagem (M),Em Viagem,Em rota
+2026-11-10,FRANCIS FABIANO MORAES DE OLIVEIRA,Matriz SP,Matriz SP,Em Viagem (M),Em Viagem,Em rota
+2026-11-11,FRANCIS FABIANO MORAES DE OLIVEIRA,Matriz SP,Matriz SP,Em Viagem (M),Em Viagem,Em rota
+2026-11-12,FRANCIS FABIANO MORAES DE OLIVEIRA,Matriz SP,Matriz SP,Em Viagem (M),Em Viagem,Em rota
+2026-11-13,FRANCIS FABIANO MORAES DE OLIVEIRA,Matriz SP,Matriz SP,Em Viagem (M),Em Viagem,Em rota
